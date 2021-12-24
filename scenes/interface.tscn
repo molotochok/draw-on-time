@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=1]
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=2]
 [ext_resource path="res://scripts/settings_manager.gd" type="Script" id=3]
 [ext_resource path="res://resources/settings/settings_1.tres" type="Resource" id=4]
 [ext_resource path="res://scenes/time_progress.gd" type="Script" id=5]
+[ext_resource path="res://scripts/refresh.gd" type="Script" id=6]
+[ext_resource path="res://scripts/finish.gd" type="Script" id=7]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -28,3 +30,28 @@ __meta__ = {
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="TimeProgress"]
+
+[node name="Refresh" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -93.0
+margin_right = 101.0
+margin_bottom = -32.0
+text = "Refresh"
+script = ExtResource( 6 )
+
+[node name="Finish" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -157.024
+margin_top = -91.4264
+margin_right = -82.0244
+margin_bottom = -42.4264
+text = "Finish"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
