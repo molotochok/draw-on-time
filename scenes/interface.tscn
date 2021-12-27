@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=1]
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://scenes/time_progress.gd" type="Script" id=5]
 [ext_resource path="res://scripts/refresh.gd" type="Script" id=6]
 [ext_resource path="res://scripts/finish.gd" type="Script" id=7]
+[ext_resource path="res://scripts/drawing_canvas.gd" type="Script" id=8]
+[ext_resource path="res://materials/drawing_canvas/drawing_canvas.material" type="Material" id=9]
+[ext_resource path="res://img.png" type="Texture" id=10]
+[ext_resource path="res://sprites/star.png" type="Texture" id=11]
+[ext_resource path="res://scripts/score.gd" type="Script" id=12]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -30,6 +35,7 @@ __meta__ = {
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="TimeProgress"]
+one_shot = true
 
 [node name="Refresh" type="Button" parent="."]
 anchor_top = 1.0
@@ -40,6 +46,9 @@ margin_right = 101.0
 margin_bottom = -32.0
 text = "Refresh"
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Finish" type="Button" parent="."]
 anchor_left = 1.0
@@ -55,3 +64,92 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DrawingCanvas" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 31.0
+margin_top = 31.0
+margin_right = -31.0
+margin_bottom = -105.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ref_texture_rect = NodePath("RefTextureRect")
+main_texture_rect = NodePath("MainTextureRect")
+
+[node name="RefTextureRect" type="TextureRect" parent="DrawingCanvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainTextureRect" type="TextureRect" parent="DrawingCanvas"]
+material = ExtResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.68179
+margin_bottom = -1.68179
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -166.0
+margin_top = 30.0
+margin_right = -39.0
+margin_bottom = 83.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+stars_container = NodePath("Stars")
+
+[node name="Background" type="TextureRect" parent="Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Stars" type="HBoxContainer" parent="Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star1" type="TextureRect" parent="Score/Stars"]
+visible = false
+margin_right = 50.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 50, 0 )
+texture = ExtResource( 11 )
+expand = true
+
+[node name="Star2" type="TextureRect" parent="Score/Stars"]
+visible = false
+margin_left = 27.0
+margin_right = 77.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 50, 0 )
+texture = ExtResource( 11 )
+expand = true
+
+[node name="Star3" type="TextureRect" parent="Score/Stars"]
+visible = false
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 50, 0 )
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="TimeProgress/Timer" to="TimeProgress" method="_on_Timer_timeout"]

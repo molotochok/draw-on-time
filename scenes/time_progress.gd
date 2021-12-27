@@ -25,3 +25,7 @@ func _on_finished():
 func update_progress(param_name):
 	var time_left = timer.get_time_left()
 	get_material().set_shader_param(param_name, time_left)
+
+
+func _on_Timer_timeout():
+	GameEvents.emit_signal("finished")

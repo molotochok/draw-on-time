@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "ScoreCalculator",
+"language": "GDScript",
+"path": "res://scripts/score_calculator.gd"
+}, {
 "base": "Resource",
 "class": "Settings",
 "language": "GDScript",
 "path": "res://scripts/settings.gd"
 } ]
 _global_script_class_icons={
+"ScoreCalculator": "",
 "Settings": ""
 }
 
@@ -27,6 +33,14 @@ config/icon="res://icon.png"
 [autoload]
 
 GameEvents="*res://scripts/game_events.gd"
+
+[input]
+
+capture_image={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
