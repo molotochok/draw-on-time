@@ -27,12 +27,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Draw-on-time"
-run/main_scene="res://scenes/interface.tscn"
+run/main_scene="res://scenes/levels/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GameEvents="*res://scripts/game_events.gd"
+SceneManager="*res://scripts/scene_manager.gd"
+FileManager="*res://scripts/file_manager.gd"
+Paths="*res://scripts/paths.gd"
 
 [input]
 

@@ -18,12 +18,15 @@ func calculate(main: TextureRect, ref: TextureRect):
 	_thread.start(self, "_calculate", [main_image, ref_image])
 	
 func dispose():
-	_thread.wait_to_finish()
+	if _thread.is_active():
+		_thread.wait_to_finish()
 
 ###### Private Methods ######
 func _calculate_pixel_count(main_image: Image, ref_image: Image):
 	var width = main_image.get_width()
 	var height = main_image.get_height()
+	
+	ref_image.resize(width, height)
 	
 	var pixel_count = PixelCount.new()
 	

@@ -3,7 +3,6 @@ extends Control
 export(NodePath) onready var stars_container = get_node(stars_container)
 
 func _ready():
-	print("score ready")
 	GameEvents.connect("score_calculated", self, "_on_score_calculated")
 	
 func _on_score_calculated(score: float):

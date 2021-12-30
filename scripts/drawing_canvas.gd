@@ -4,9 +4,9 @@ export(NodePath) onready var ref_texture_rect = get_node(ref_texture_rect) as Te
 export(NodePath) onready var main_texture_rect = get_node(main_texture_rect) as TextureRect
 
 onready var _pen := Node2D.new()
-# These values are overriden by settings if specified
 var _pen_size := 10.0
-var _pen_color := Color.red
+
+var _settings: Settings
 
 var _prev_mouse_pos := Vector2()
 var _can_draw := true
@@ -22,10 +22,6 @@ func _ready():
 func _process(delta):
 	if(_can_draw):
 		_pen.update()
-	
-	if(Input.is_action_just_pressed("capture_image")):
-		var image = main_texture_rect.get_texture().get_data()
-		image.save_png("img.png")
 
 
 ##### Custom handlers #####
@@ -37,23 +33,40 @@ func _on_finished():
 	finish()
 
 func _on_settings_initialized(settings: Settings):
-	ref_texture_rect.set_texture(settings.ref_texture)
-	main_texture_rect.get_material().set_shader_param("reference", settings.ref_texture)
+	_settings = settings
 	
-	_pen_color = settings.color
-	_pen_size = settings.pen_size
+	if(ref_texture_rect.get_texture() != settings.ref_texture):
+		ref_texture_rect.set_texture(settings.ref_texture)
+		main_texture_rect.get_material().set_shader_param("reference", settings.ref_texture)
+	
+	update_pen_size()
 
 func _on_draw():
 	var mouse_pos = get_local_mouse_position()
 	
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		_pen.draw_circle(mouse_pos, _pen_size, _pen_color)
-		_pen.draw_line(mouse_pos, _prev_mouse_pos, _pen_color, _pen_size * 2)
-
+	if(mouse_pos.x > 0 && mouse_pos.x < _viewport.size.x):
+		if(mouse_pos.y > 0 && mouse_pos.y < _viewport.size.y):
+			if Input.is_mouse_button_pressed(BUTTON_LEFT):
+				_pen.draw_circle(mouse_pos, _pen_size, _settings.color)
+				_pen.draw_line(mouse_pos, _prev_mouse_pos, _settings.color, _pen_size * 2)
+				
 	_prev_mouse_pos = mouse_pos
+
+func _on_scene_created():
+	var img = main_texture_rect.get_texture().get_data()
+	var index = str(SceneManager.scene_count + 1)
+	var img_path = Paths.SPRITE_REFERENCES % index
+	img.save_png(img_path)
+	
+	var settings = _settings.duplicate()
+	settings.ref_texture = load(img_path)
+	ResourceSaver.save(Paths.MAIN_SETTING % index, settings)
+	
+	GameEvents.emit_signal("new_settings_created")
 
 func _on_resized():
 	_viewport.size = get_rect().size
+	update_pen_size()
 	
 func _exit_tree():
 	_score_calculator.dispose()
@@ -61,6 +74,7 @@ func _exit_tree():
 ##### Helpful functions #####
 func init_main_texture_viewport(): 
 	set_viewport()
+	
 	main_texture_rect.set_texture(_viewport.get_texture())
 	
 func init_handlers():
@@ -71,6 +85,7 @@ func init_handlers():
 	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
 	GameEvents.connect("finished", self, "_on_finished")
 	GameEvents.connect("refreshed", self, "_on_refreshed")
+	GameEvents.connect("scene_created", self, "_on_scene_created")
 
 func set_viewport():
 	_viewport = Viewport.new()
@@ -88,3 +103,11 @@ func finish():
 	_can_draw = false
 	_score_calculator.calculate(main_texture_rect, ref_texture_rect)
 	
+func update_pen_size():
+	if(!_settings):
+		return
+	
+	_pen_size = _settings.pen_size
+	
+	if(_viewport):
+		_pen_size *= (_viewport.size.x + _viewport.size.y) / 2
