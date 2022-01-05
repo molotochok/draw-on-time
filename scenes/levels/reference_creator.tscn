@@ -9,7 +9,7 @@
 [ext_resource path="res://scripts/scene_creation_btn.gd" type="Script" id=7]
 [ext_resource path="res://scripts/pen_size_picker.gd" type="Script" id=8]
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=9]
-[ext_resource path="res://scenes/time_progress.gd" type="Script" id=10]
+[ext_resource path="res://scripts/time_progress.gd" type="Script" id=10]
 [ext_resource path="res://scripts/time_picker.gd" type="Script" id=11]
 
 [node name="Interface" type="Control"]

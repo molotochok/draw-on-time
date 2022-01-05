@@ -8,6 +8,7 @@ func _ready():
 func _on_score_calculated(score: float):
 	var stars = stars_container.get_children()
 	
+	# Todo: get rid of code duplication
 	if(score >= 50):
 		stars[0].set_visible(true)
 	

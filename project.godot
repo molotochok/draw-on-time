@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "Math",
+"language": "GDScript",
+"path": "res://scripts/math/math.gd"
+}, {
+"base": "Reference",
 "class": "ScoreCalculator",
 "language": "GDScript",
 "path": "res://scripts/score_calculator.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://scripts/settings.gd"
 } ]
 _global_script_class_icons={
+"Math": "",
 "ScoreCalculator": "",
 "Settings": ""
 }

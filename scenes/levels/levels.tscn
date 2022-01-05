@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/components/level_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/level_buttons.gd" type="Script" id=2]
+[ext_resource path="res://sprites/background.png" type="Texture" id=3]
+[ext_resource path="res://sprites/album.png" type="Texture" id=4]
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Album" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 36.0
+margin_top = 21.0
+margin_right = -36.0
+margin_bottom = -21.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="GridContainer" type="GridContainer" parent="Album"]
+anchor_left = 0.02
+anchor_right = 0.984
+anchor_bottom = 0.97
+margin_left = 69.96
+margin_top = 36.0
+margin_right = -40.768
+margin_bottom = -35.26
+grow_horizontal = 0
+size_flags_horizontal = 3
+columns = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_right = 131.0
+margin_bottom = 154.0
+
+[node name="LevelButton2" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 135.0
+margin_right = 266.0
+margin_bottom = 154.0
+
+[node name="LevelButton3" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 270.0
+margin_right = 401.0
+margin_bottom = 154.0
+
+[node name="LevelButton4" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 405.0
+margin_right = 536.0
+margin_bottom = 154.0
+
+[node name="LevelButton5" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 540.0
+margin_right = 671.0
+margin_bottom = 154.0
+
+[node name="LevelButton6" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 675.0
+margin_right = 806.0
+margin_bottom = 154.0
+
+[node name="LevelButton7" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_top = 158.0
+margin_right = 131.0
+margin_bottom = 312.0
+
+[node name="LevelButton8" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 135.0
+margin_top = 158.0
+margin_right = 266.0
+margin_bottom = 312.0
+
+[node name="LevelButton9" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 270.0
+margin_top = 158.0
+margin_right = 401.0
+margin_bottom = 312.0
+
+[node name="LevelButton10" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 405.0
+margin_top = 158.0
+margin_right = 536.0
+margin_bottom = 312.0
+
+[node name="LevelButton11" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 540.0
+margin_top = 158.0
+margin_right = 671.0
+margin_bottom = 312.0
+
+[node name="LevelButton12" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 675.0
+margin_top = 158.0
+margin_right = 806.0
+margin_bottom = 312.0
+
+[node name="LevelButton13" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_top = 316.0
+margin_right = 131.0
+margin_bottom = 470.0
+
+[node name="LevelButton14" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 135.0
+margin_top = 316.0
+margin_right = 266.0
+margin_bottom = 470.0
+
+[node name="LevelButton15" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 270.0
+margin_top = 316.0
+margin_right = 401.0
+margin_bottom = 470.0
+
+[node name="LevelButton16" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 405.0
+margin_top = 316.0
+margin_right = 536.0
+margin_bottom = 470.0
+
+[node name="LevelButton17" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 540.0
+margin_top = 316.0
+margin_right = 671.0
+margin_bottom = 470.0
+
+[node name="LevelButton18" parent="Album/GridContainer" instance=ExtResource( 1 )]
+margin_left = 675.0
+margin_top = 316.0
+margin_right = 806.0
+margin_bottom = 470.0

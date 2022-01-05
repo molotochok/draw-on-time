@@ -1,18 +1,19 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=1]
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=2]
 [ext_resource path="res://sprites/references/1.png" type="Texture" id=3]
-[ext_resource path="res://sprites/star.png" type="Texture" id=4]
+[ext_resource path="res://sprites/background.png" type="Texture" id=4]
 [ext_resource path="res://materials/drawing_canvas/drawing_canvas.material" type="Material" id=5]
 [ext_resource path="res://scripts/settings.gd" type="Script" id=6]
 [ext_resource path="res://scripts/next_level.gd" type="Script" id=7]
-[ext_resource path="res://scenes/time_progress.gd" type="Script" id=8]
+[ext_resource path="res://scripts/time_progress.gd" type="Script" id=8]
 [ext_resource path="res://scripts/settings_manager.gd" type="Script" id=9]
 [ext_resource path="res://scripts/refresh_btn.gd" type="Script" id=10]
 [ext_resource path="res://scripts/finish_btn.gd" type="Script" id=11]
 [ext_resource path="res://scripts/drawing_canvas.gd" type="Script" id=12]
 [ext_resource path="res://scripts/score.gd" type="Script" id=13]
+[ext_resource path="res://sprites/album.png" type="Texture" id=14]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -20,10 +21,17 @@ time = 10.0
 pen_size = 0.05
 color = Color( 1, 1, 1, 1 )
 ref_texture = ExtResource( 3 )
+index = 1
+score = 0.0
+opened = false
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
 load_path = "res://.import/2.png-0943991cc63024d111e81b9044709366.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/star.png-b168e13ae1f9d03011573f475e49f2fb.stex"
 
 [node name="MainScene" type="Control"]
 anchor_right = 1.0
@@ -33,6 +41,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 settings = SubResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TimeProgress" type="TextureRect" parent="."]
 material = ExtResource( 1 )
@@ -52,38 +69,51 @@ one_shot = true
 [node name="Refresh" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 24.0
-margin_top = -93.0
-margin_right = 101.0
-margin_bottom = -32.0
-text = "Refresh"
+margin_left = 13.9206
+margin_top = -52.4802
+margin_right = 30.9206
+margin_bottom = -29.4802
+text = "r"
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Finish" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -157.024
-margin_top = -91.4264
-margin_right = -82.0244
-margin_bottom = -42.4264
-text = "Finish"
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 7.55952
+margin_top = -44.5397
+margin_right = 29.5595
+margin_bottom = 34.4603
+text = "f"
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DrawingCanvas" type="Control" parent="."]
+[node name="AlbumBackground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 31.0
-margin_top = 31.0
-margin_right = -57.0
-margin_bottom = -105.0
+margin_left = 36.0
+margin_top = 21.0
+margin_right = -36.0
+margin_bottom = -21.0
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawingCanvas" type="Control" parent="AlbumBackground"]
+anchor_left = 0.02
+anchor_top = 0.013
+anchor_right = 0.978
+anchor_bottom = 0.967
+margin_left = 31.96
+margin_top = -4.254
+margin_right = 4.94397
+margin_bottom = 1.41394
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,7 +121,8 @@ __meta__ = {
 ref_texture_rect = NodePath("RefTextureRect")
 main_texture_rect = NodePath("MainTextureRect")
 
-[node name="RefTextureRect" type="TextureRect" parent="DrawingCanvas"]
+[node name="RefTextureRect" type="TextureRect" parent="AlbumBackground/DrawingCanvas"]
+modulate = Color( 0.45098, 0.447059, 0.447059, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = SubResource( 2 )
@@ -100,7 +131,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainTextureRect" type="TextureRect" parent="DrawingCanvas"]
+[node name="MainTextureRect" type="TextureRect" parent="AlbumBackground/DrawingCanvas"]
 material = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -138,7 +169,7 @@ visible = false
 margin_right = 50.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 50, 0 )
-texture = ExtResource( 4 )
+texture = SubResource( 3 )
 expand = true
 
 [node name="Star2" type="TextureRect" parent="Score/Stars"]
@@ -147,7 +178,7 @@ margin_left = 27.0
 margin_right = 77.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 50, 0 )
-texture = ExtResource( 4 )
+texture = SubResource( 3 )
 expand = true
 
 [node name="Star3" type="TextureRect" parent="Score/Stars"]
@@ -156,18 +187,20 @@ margin_left = 54.0
 margin_right = 104.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 50, 0 )
-texture = ExtResource( 4 )
+texture = SubResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextLevel" type="Button" parent="."]
-margin_left = 26.0
-margin_top = 181.0
-margin_right = 98.0
-margin_bottom = 359.0
-text = "Next level"
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.1022
+margin_top = 106.593
+margin_right = 29.1022
+margin_bottom = 142.593
+text = "l"
 script = ExtResource( 7 )
 
 [connection signal="timeout" from="TimeProgress/Timer" to="TimeProgress" method="_on_Timer_timeout"]
