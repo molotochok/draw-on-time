@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "DrawingCanvas",
+"language": "GDScript",
+"path": "res://scripts/main/drawing_canvas.gd"
+}, {
 "base": "Reference",
 "class": "Math",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://scripts/settings.gd"
 } ]
 _global_script_class_icons={
+"DrawingCanvas": "",
 "Math": "",
 "ScoreCalculator": "",
 "Settings": ""
@@ -33,15 +39,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Draw-on-time"
-run/main_scene="res://scenes/levels/main.tscn"
+run/main_scene="res://scenes/levels/menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-GameEvents="*res://scripts/game_events.gd"
-SceneManager="*res://scripts/scene_manager.gd"
-FileManager="*res://scripts/file_manager.gd"
-Paths="*res://scripts/paths.gd"
+GameEvents="*res://scripts/singletons/game_events.gd"
+FileManager="*res://scripts/singletons/file_manager.gd"
+Paths="*res://scripts/singletons/paths.gd"
+LevelManager="*res://scripts/singletons/level_manager.gd"
 
 [input]
 

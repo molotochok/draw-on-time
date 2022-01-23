@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/components/level_button.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/levels/level_buttons.gd" type="Script" id=2]
+[ext_resource path="res://scripts/levels/level_buttons.gd" type="Script" id=2]
 [ext_resource path="res://sprites/background.png" type="Texture" id=3]
 [ext_resource path="res://sprites/album.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scripts/levels/next_levels_page.gd" type="Script" id=6]
+[ext_resource path="res://scripts/levels/prev_levels_page.gd" type="Script" id=7]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -31,6 +34,19 @@ margin_bottom = -21.0
 texture = ExtResource( 4 )
 expand = true
 
+[node name="PrevLevelPageBtn" type="TextureButton" parent="Album"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -17.4819
+margin_top = -33.773
+margin_right = 46.5181
+margin_bottom = 30.227
+texture_normal = ExtResource( 5 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GridContainer" type="GridContainer" parent="Album"]
 anchor_left = 0.02
 anchor_right = 0.984
@@ -46,102 +62,155 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+prev_btn = NodePath("../PrevLevelPageBtn")
+next_btn = NodePath("../NextLevelPageBtn")
 
 [node name="LevelButton" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 131.0
 margin_bottom = 154.0
 
 [node name="LevelButton2" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 135.0
 margin_right = 266.0
 margin_bottom = 154.0
 
 [node name="LevelButton3" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 270.0
 margin_right = 401.0
 margin_bottom = 154.0
 
 [node name="LevelButton4" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 405.0
 margin_right = 536.0
 margin_bottom = 154.0
 
 [node name="LevelButton5" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 540.0
 margin_right = 671.0
 margin_bottom = 154.0
 
 [node name="LevelButton6" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 675.0
 margin_right = 806.0
 margin_bottom = 154.0
 
 [node name="LevelButton7" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 158.0
 margin_right = 131.0
 margin_bottom = 312.0
 
 [node name="LevelButton8" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 135.0
 margin_top = 158.0
 margin_right = 266.0
 margin_bottom = 312.0
 
 [node name="LevelButton9" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 270.0
 margin_top = 158.0
 margin_right = 401.0
 margin_bottom = 312.0
 
 [node name="LevelButton10" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 405.0
 margin_top = 158.0
 margin_right = 536.0
 margin_bottom = 312.0
 
 [node name="LevelButton11" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 540.0
 margin_top = 158.0
 margin_right = 671.0
 margin_bottom = 312.0
 
 [node name="LevelButton12" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 675.0
 margin_top = 158.0
 margin_right = 806.0
 margin_bottom = 312.0
 
 [node name="LevelButton13" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 316.0
 margin_right = 131.0
 margin_bottom = 470.0
 
 [node name="LevelButton14" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 135.0
 margin_top = 316.0
 margin_right = 266.0
 margin_bottom = 470.0
 
 [node name="LevelButton15" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 270.0
 margin_top = 316.0
 margin_right = 401.0
 margin_bottom = 470.0
 
 [node name="LevelButton16" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 405.0
 margin_top = 316.0
 margin_right = 536.0
 margin_bottom = 470.0
 
 [node name="LevelButton17" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 540.0
 margin_top = 316.0
 margin_right = 671.0
 margin_bottom = 470.0
 
 [node name="LevelButton18" parent="Album/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 675.0
 margin_top = 316.0
 margin_right = 806.0
 margin_bottom = 470.0
+
+[node name="NextLevelPageBtn" type="TextureButton" parent="Album"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -32.0
+margin_right = 17.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

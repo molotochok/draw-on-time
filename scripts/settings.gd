@@ -5,13 +5,12 @@ class_name Settings
 export(float) var time = 10
 export(float) var pen_size = 0.05
 export(Color) var color = Color.white
-export(Texture) var ref_texture
-
-# TODO: Not sure that I need this here. 
-# TODO: Maybe it would be better to move this into a seperate file
 export(int) var index = 1
 export(float) var score = 0.0
 export(bool) var opened = false
+
+var _ref_texture
+var _ref_preview_texture
 
 # TODO: Not sure that this belongs here
 func get_stars():
@@ -25,3 +24,15 @@ func get_stars():
 		return 3
 	
 	return 0
+	
+func get_ref_texture():
+	if(!_ref_texture):
+		_ref_texture = load(Paths.SPRITE_REFERENCES % index)
+	
+	return _ref_texture
+	
+func get_ref_preview_texture():
+	if(!_ref_preview_texture):
+		_ref_preview_texture = load(Paths.SPRITE_PREVIEW_REFERENCES % index)
+	
+	return _ref_preview_texture

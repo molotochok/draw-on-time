@@ -1,8 +1,73 @@
-[gd_scene format=2]
+[gd_scene load_steps=9 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://sprites/play/play_hovered.png" type="Texture" id=1]
+[ext_resource path="res://sprites/play/play_pressed.png" type="Texture" id=2]
+[ext_resource path="res://scripts/menu/play_btn.gd" type="Script" id=3]
+[ext_resource path="res://scripts/menu/quit_btn.gd" type="Script" id=4]
+[ext_resource path="res://sprites/album-front.png" type="Texture" id=6]
+[ext_resource path="res://sprites/quit/quit_pressed.png" type="Texture" id=8]
+[ext_resource path="res://sprites/quit/quit_hovered.png" type="Texture" id=9]
+[ext_resource path="res://sprites/background.png" type="Texture" id=10]
+
+[node name="Interface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="Album" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 36.0
+margin_top = 21.0
+margin_right = -36.0
+margin_bottom = -21.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paper" type="TextureRect" parent="Album"]
+anchor_left = 0.256303
+anchor_top = 0.16129
+anchor_right = 0.743697
+anchor_bottom = 0.759857
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Play" type="TextureButton" parent="Album/Paper"]
+anchor_left = 0.189655
+anchor_top = 0.134731
+anchor_right = 0.806035
+anchor_bottom = 0.44012
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Quit" type="TextureButton" parent="Album/Paper"]
+anchor_left = 0.189655
+anchor_top = 0.592814
+anchor_right = 0.806035
+anchor_bottom = 0.898204
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
 }

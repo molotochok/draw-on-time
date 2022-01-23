@@ -1,0 +1,13 @@
+extends Node
+
+signal settings_initialized
+signal refreshed
+signal finished
+signal scene_created
+signal score_calculated
+
+signal pen_size_changed
+signal time_changed
+
+signal prev_level_page_clicked
+signal next_level_page_clicked
