@@ -53,6 +53,7 @@ anchor_left = 0.33134
 anchor_top = 0.509819
 anchor_right = 0.642977
 anchor_bottom = 0.663085
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 2 )
@@ -67,6 +68,7 @@ anchor_left = 0.318706
 anchor_top = 0.740324
 anchor_right = 0.655984
 anchor_bottom = 0.908666
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 8 )
@@ -77,6 +79,7 @@ __meta__ = {
 }
 
 [node name="Title" type="TextureRect" parent="Album/Paper"]
+modulate = Color( 0.364706, 0.415686, 0.333333, 1 )
 anchor_left = 0.00726186
 anchor_top = 0.0776037
 anchor_right = 0.975704

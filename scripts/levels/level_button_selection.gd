@@ -11,18 +11,17 @@ export var _max_offset := 8
 
 var _move_dir = MoveDirection.IDLE
 
-var _parent: Control
+onready var _parent: LevelButton = get_parent() as LevelButton
 var _initial_parent_pos: Vector2
 
 func _ready():
-	_parent = get_parent()
 	update_initial_parent_pos()
 	
+	connect("resized", self, "_on_resized")
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
-	connect("resized", self, "_on_resized")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (_move_dir == MoveDirection.UP):
 		move_up()
 	
@@ -30,10 +29,12 @@ func _physics_process(delta):
 		move_down()
 		
 func _on_mouse_entered():
-	_move_dir = MoveDirection.UP
+	if _parent.opened():
+		_move_dir = MoveDirection.UP
 
 func _on_mouse_exited():
-	_move_dir = MoveDirection.DOWN
+	if _parent.opened():
+		_move_dir = MoveDirection.DOWN
 
 func _on_resized():
 	update_initial_parent_pos()
