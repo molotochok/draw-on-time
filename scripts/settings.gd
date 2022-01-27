@@ -9,11 +9,10 @@ export(int) var index = 1
 export(float) var score = 0.0
 export(bool) var opened = false
 
-var _ref_texture
-var _ref_preview_texture
+var _ref_texture : Texture
+var _ref_preview_texture : Texture
 
-# TODO: Not sure that this belongs here
-func get_stars():
+func get_stars() -> int:
 	if(score >= 50 && score < 75):
 		return 1
 	
@@ -24,14 +23,17 @@ func get_stars():
 		return 3
 	
 	return 0
-	
-func get_ref_texture():
+
+func passed() -> bool:
+  return get_stars() > 0
+
+func get_ref_texture() -> Texture:
 	if(!_ref_texture):
 		_ref_texture = load(Paths.SPRITE_REFERENCES % index)
 	
 	return _ref_texture
 	
-func get_ref_preview_texture():
+func get_ref_preview_texture() -> Texture:
 	if(!_ref_preview_texture):
 		_ref_preview_texture = load(Paths.SPRITE_PREVIEW_REFERENCES % index)
 	

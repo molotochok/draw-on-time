@@ -1,6 +1,7 @@
 extends Node
 
 signal settings_initialized
+signal settings_save_requested
 signal refreshed
 signal finished
 signal scene_created

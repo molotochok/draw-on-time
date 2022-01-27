@@ -26,7 +26,7 @@ func update_settings(settings: Settings, index: int):
 	_settings = settings
 	index_label.text = str(index)
 
-	if settings.opened:
+	if opened():
 		background.set_texture(background_texture_opened)
 		preview.set_texture(settings.get_ref_preview_texture())
 	else:
@@ -45,14 +45,14 @@ func update_stars(number: int):
 	stars[2].modulate.a = 1 if number > 2 else 0
 
 func _pressed():
-	if(_settings.opened):
+	if(opened()):
 		LevelManager.load_main_level(_settings.index)
 	
 func _on_button_up():
-	if(_settings.opened):
+	if(opened()):
 		modulate = button_up_color
 	
 func _on_button_down():
-	if(_settings.opened):
+	if(opened()):
 		modulate = button_down_color
 	

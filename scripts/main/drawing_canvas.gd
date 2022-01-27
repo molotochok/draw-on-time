@@ -32,7 +32,8 @@ func _on_refreshed():
 	_viewport.set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
 
 func _on_finished():
-	finish()
+	_can_draw = false
+	_score_calculator.calculate(main_texture_rect, ref_texture_rect)
 
 func _on_settings_initialized(settings: Settings):
 	_settings = settings
@@ -86,10 +87,6 @@ func set_viewport():
 	_viewport.add_child(_pen)
 	
 	add_child(_viewport)
-
-func finish():
-	_can_draw = false
-	_score_calculator.calculate(main_texture_rect, ref_texture_rect)
 	
 func update_pen_size():
 	if(!_settings):

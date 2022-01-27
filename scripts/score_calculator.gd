@@ -56,7 +56,7 @@ func _calculate_score(pixel_count: PixelCount) -> float:
 	var main_colored = pixel_count.main_colored
 	var ref_colored = pixel_count.ref_colored	
 	
-	var score = 0.0
+	var score := 0.0
 	if(main_colored != 0 && ref_colored != 0):
 		var diff = float(main_colored) / ref_colored \
 			if(ref_colored > main_colored) \

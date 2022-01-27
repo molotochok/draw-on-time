@@ -21,6 +21,4 @@ func _on_scene_created():
 	
   var settings = _settings.duplicate()
   settings.index = index
-  ResourceSaver.save(Paths.MAIN_SETTING % index, settings)
-  
-  LevelManager.increment_level_count()
+  GameEvents.emit_signal("settings_save_requested", settings)  

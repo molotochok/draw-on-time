@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
-time = 10.0
+time = 3.0
 pen_size = 0.05
 color = Color( 1, 1, 1, 1 )
-index = 2
-score = 95.817
-opened = true
+index = 43
+score = 0.0
+opened = false
