@@ -1,4 +1,4 @@
 extends TextureButton
 
 func _pressed():
-	GameEvents.emit_signal("refreshed")
+  LevelManager.load_levels()

@@ -21,15 +21,17 @@ func _ready():
 	init_main_texture_viewport()
 	init_handlers()
 
-func _process(delta):
+func _process(_delta):
 	if(_can_draw):
 		_pen.update()
-
 
 ##### Custom handlers #####
 func _on_refreshed():
 	_viewport.set_clear_mode(Viewport.CLEAR_MODE_ALWAYS)
 	_viewport.set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
+
+	if !_can_draw:
+		_can_draw = true
 
 func _on_finished():
 	_can_draw = false

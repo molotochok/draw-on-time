@@ -36,7 +36,6 @@ func update_settings(settings: Settings, index: int):
 
 	update_stars(settings.get_stars())
 	
-# Todo: get rid of code duplication with score script
 func update_stars(number: int):
 	var stars = stars_container.get_children()
 

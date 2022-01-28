@@ -45,7 +45,10 @@ func save(target_settings = settings):
   if ResourceSaver.save(Paths.MAIN_SETTING % target_settings.index, target_settings) != OK:
     printerr("A problem occured during saving the setting.")
     return
-  
+
+  if(target_settings == settings):
+    GameEvents.emit_signal("settings_updated", target_settings)
+
   if(target_settings.index > LevelManager.level_count):
     LevelManager.increment_level_count()
   
