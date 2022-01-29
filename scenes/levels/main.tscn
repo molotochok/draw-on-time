@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=1]
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=2]
@@ -14,6 +14,10 @@
 [ext_resource path="res://scripts/main/drawing_canvas.gd" type="Script" id=12]
 [ext_resource path="res://scripts/score.gd" type="Script" id=13]
 [ext_resource path="res://sprites/album.png" type="Texture" id=14]
+[ext_resource path="res://sprites/next_level/next_level.png" type="Texture" id=15]
+[ext_resource path="res://scripts/main/next_level_btn.gd" type="Script" id=16]
+[ext_resource path="res://sprites/next_level/next_level_hovered.png" type="Texture" id=17]
+[ext_resource path="res://sprites/next_level/next_level_pressed.png" type="Texture" id=18]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -181,9 +185,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -251.551
+margin_left = -634.311
 margin_top = -55.2246
-margin_right = -32.5514
+margin_right = -415.311
 margin_bottom = -11.2246
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
@@ -192,5 +196,21 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NextLevel" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -158.0
+margin_top = -59.0
+margin_right = -31.0
+margin_bottom = -8.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 17 )
+expand = true
+script = ExtResource( 16 )
 
 [connection signal="timeout" from="TimeProgress/Timer" to="TimeProgress" method="_on_Timer_timeout"]
