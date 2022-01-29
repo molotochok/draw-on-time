@@ -70,13 +70,13 @@ func init_main_texture_viewport():
 	main_texture_rect.set_texture(_viewport.get_texture())
 	
 func init_handlers():
-	_pen.connect("draw", self, "_on_draw")
+	assert(_pen.connect("draw", self, "_on_draw") == OK)
 	
-	connect("resized", self, "_on_resized")
+	assert(connect("resized", self, "_on_resized") == OK)
 	
-	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
-	GameEvents.connect("finished", self, "_on_finished")
-	GameEvents.connect("refreshed", self, "_on_refreshed")
+	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
+	assert(GameEvents.connect("finished", self, "_on_finished") == OK)
+	assert(GameEvents.connect("refreshed", self, "_on_refreshed") == OK)
 
 func set_viewport():
 	_viewport = Viewport.new()

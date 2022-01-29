@@ -1,7 +1,7 @@
 extends Label
 
 func _ready():
-	connect("resized", self, "_on_resized")
+	assert(connect("resized", self, "_on_resized") == OK)
 
 func _on_resized():
 	var font: DynamicFont = get_font("level_button_index_font")

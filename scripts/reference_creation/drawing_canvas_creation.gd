@@ -3,7 +3,7 @@ extends DrawingCanvas
 func init_handlers():
 	.init_handlers()
 	
-	GameEvents.connect("scene_created", self, "_on_scene_created")
+	assert(GameEvents.connect("scene_created", self, "_on_scene_created") == OK)
 
 func _on_settings_initialized(settings: Settings):
 	_settings = settings

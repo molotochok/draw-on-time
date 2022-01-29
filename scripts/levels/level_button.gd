@@ -16,8 +16,8 @@ export var button_down_color = Color(0.85, 0.85, 0.85, 1)
 var _settings: Settings
 
 func _ready():
-	connect("button_up", self, "_on_button_up")	
-	connect("button_down", self, "_on_button_down")
+	assert(connect("button_up", self, "_on_button_up") == OK)
+	assert(connect("button_down", self, "_on_button_down") == OK)
 
 func opened():
   return _settings.opened

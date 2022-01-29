@@ -17,9 +17,9 @@ var _initial_parent_pos: Vector2
 func _ready():
 	update_initial_parent_pos()
 	
-	connect("resized", self, "_on_resized")
-	connect("mouse_entered", self, "_on_mouse_entered")
-	connect("mouse_exited", self, "_on_mouse_exited")
+	assert(connect("resized", self, "_on_resized") == OK)
+	assert(connect("mouse_entered", self, "_on_mouse_entered") == OK)
+	assert(connect("mouse_exited", self, "_on_mouse_exited") == OK)
 
 func _physics_process(_delta):
 	if (_move_dir == MoveDirection.UP):

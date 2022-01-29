@@ -3,8 +3,8 @@ extends Control
 export(NodePath) onready var stars_container = get_node(stars_container)
 
 func _ready():
-	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
-	GameEvents.connect("settings_updated", self, "_on_settings_updated")
+	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
+	assert(GameEvents.connect("settings_updated", self, "_on_settings_updated") == OK)
 	
 func _on_settings_initialized(settings: Settings):
 	show_stars(settings.get_stars())

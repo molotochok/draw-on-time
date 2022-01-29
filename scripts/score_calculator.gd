@@ -15,7 +15,7 @@ func calculate(main: TextureRect, ref: TextureRect):
 	var main_image = main.get_texture().get_data()
 	var ref_image = ref.get_texture().get_data()
 	
-	_thread.start(self, "_calculate", [main_image, ref_image])
+	assert(_thread.start(self, "_calculate", [main_image, ref_image]) == OK)
 	
 func dispose():
 	if _thread.is_active():

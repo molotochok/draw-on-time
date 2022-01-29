@@ -5,9 +5,9 @@ export(NodePath) onready var timer = get_node(timer) as Timer
 export(bool) var dont_finish = false
 
 func _ready():
-	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
-	GameEvents.connect("time_changed", self, "_on_time_changed")
-	GameEvents.connect("refreshed", self, "_on_refreshed")
+	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
+	assert(GameEvents.connect("time_changed", self, "_on_time_changed") == OK)
+	assert(GameEvents.connect("refreshed", self, "_on_refreshed") == OK)
 
 func _process(_delta):
 	update_progress("curr_time")

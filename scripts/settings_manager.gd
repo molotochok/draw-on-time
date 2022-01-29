@@ -7,10 +7,10 @@ func _ready():
   if(load_from_resource):
 	  settings = load(Paths.MAIN_SETTING % LevelManager.current_level)
 
-  GameEvents.connect("pen_size_changed", self, "_on_pen_size_changed")
-  GameEvents.connect("time_changed", self, "_on_time_changed")
-  GameEvents.connect("score_calculated", self, "_on_score_calculated")
-  GameEvents.connect("settings_save_requested", self, "_on_settings_save_requested")
+  assert(GameEvents.connect("pen_size_changed", self, "_on_pen_size_changed") == OK)
+  assert(GameEvents.connect("time_changed", self, "_on_time_changed") == OK)
+  assert(GameEvents.connect("score_calculated", self, "_on_score_calculated") == OK)
+  assert(GameEvents.connect("settings_save_requested", self, "_on_settings_save_requested") == OK)
   
   _initialized()
 	
