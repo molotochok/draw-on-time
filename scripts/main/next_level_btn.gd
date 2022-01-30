@@ -5,13 +5,18 @@ func _init():
 	assert(GameEvents.connect("settings_updated", self, "_on_settings_updated") == OK)
 
 func _pressed():
-  LevelManager.load_next_level()
+	LevelManager.load_next_level()
 
 func _on_settings_initialized(settings: Settings):
-	change_visibility(settings)
+	toggle_disable(settings)
 
 func _on_settings_updated(settings: Settings):
-	change_visibility(settings)
+	toggle_disable(settings)
 
-func change_visibility(settings: Settings):
-	set_visible(settings.index != LevelManager.level_count && settings.passed())
+func toggle_disable(settings: Settings):
+	if settings.index != LevelManager.level_count && settings.passed():
+		disabled = false
+		set_default_cursor_shape(CURSOR_POINTING_HAND)
+	else:
+		disabled = true
+		set_default_cursor_shape(CURSOR_ARROW)

@@ -8,10 +8,16 @@ func _pressed():
   LevelManager.load_prev_level()
 
 func _on_settings_initialized(settings: Settings):
-	change_visibility(settings)
+	toggle_disable(settings)
 
 func _on_settings_updated(settings: Settings):
-	change_visibility(settings)
+	toggle_disable(settings)
 
-func change_visibility(settings: Settings):
-	set_visible(settings.index != 1)
+func toggle_disable(settings: Settings):
+  if settings.index != 1:
+    disabled = false
+    set_default_cursor_shape(CURSOR_POINTING_HAND)
+  else:
+    disabled = true
+    set_default_cursor_shape(CURSOR_ARROW)
+    

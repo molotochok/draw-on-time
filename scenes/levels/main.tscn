@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=1]
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=2]
-[ext_resource path="res://sprites/back/back.png" type="Texture" id=3]
+[ext_resource path="res://sprites/levels/levels.png" type="Texture" id=3]
 [ext_resource path="res://sprites/background.png" type="Texture" id=4]
 [ext_resource path="res://materials/drawing_canvas/drawing_canvas.material" type="Material" id=5]
 [ext_resource path="res://scripts/settings.gd" type="Script" id=6]
@@ -10,7 +10,7 @@
 [ext_resource path="res://scripts/main/time_progress.gd" type="Script" id=8]
 [ext_resource path="res://scripts/settings_manager.gd" type="Script" id=9]
 [ext_resource path="res://scripts/main/refresh_btn.gd" type="Script" id=10]
-[ext_resource path="res://scripts/main/back_btn.gd" type="Script" id=11]
+[ext_resource path="res://scripts/main/open_levels_btn.gd" type="Script" id=11]
 [ext_resource path="res://scripts/main/drawing_canvas.gd" type="Script" id=12]
 [ext_resource path="res://scripts/score.gd" type="Script" id=13]
 [ext_resource path="res://sprites/album.png" type="Texture" id=14]
@@ -21,6 +21,15 @@
 [ext_resource path="res://scripts/main/prev_level_btn.gd" type="Script" id=19]
 [ext_resource path="res://icon.png" type="Texture" id=20]
 [ext_resource path="res://sprites/star.png" type="Texture" id=21]
+[ext_resource path="res://sprites/prev_level/prev_level_pressed.png" type="Texture" id=22]
+[ext_resource path="res://sprites/prev_level/prev_level_hovered.png" type="Texture" id=23]
+[ext_resource path="res://sprites/prev_level/prev_level.png" type="Texture" id=24]
+[ext_resource path="res://sprites/next_level/next_level_disabled.png" type="Texture" id=25]
+[ext_resource path="res://sprites/prev_level/prev_level_disabled.png" type="Texture" id=26]
+[ext_resource path="res://sprites/refresh/refresh_hovered.png" type="Texture" id=27]
+[ext_resource path="res://sprites/refresh/refresh_pressed.png" type="Texture" id=28]
+[ext_resource path="res://sprites/levels/levels_hovered.png" type="Texture" id=29]
+[ext_resource path="res://sprites/levels/levels_pressed.png" type="Texture" id=30]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
@@ -167,71 +176,80 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="TextureButton" parent="."]
+[node name="LevelsBtn" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 37.0412
-margin_top = -57.4695
-margin_right = 146.041
-margin_bottom = -13.4695
+margin_left = 35.3628
+margin_top = -66.8762
+margin_right = 162.363
+margin_bottom = -15.8762
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 30 )
+texture_hover = ExtResource( 29 )
 expand = true
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Refresh" type="TextureButton" parent="."]
-anchor_left = 1.0
+[node name="RefreshBtn" type="TextureButton" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -634.311
-margin_top = -55.2246
-margin_right = -415.311
-margin_bottom = -11.2246
+margin_left = -151.311
+margin_top = -67.0543
+margin_right = 11.6892
+margin_bottom = -16.0543
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 27 )
 expand = true
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrevLevel" type="TextureButton" parent="."]
+[node name="PrevLevelBtn" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -325.247
-margin_top = -56.7551
-margin_right = -198.247
-margin_bottom = -5.75513
+margin_left = -307.894
+margin_top = -67.0
+margin_right = -180.894
+margin_bottom = -16.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 18 )
-texture_hover = ExtResource( 17 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 23 )
+texture_disabled = ExtResource( 26 )
 expand = true
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextLevel" type="TextureButton" parent="."]
+[node name="NextLevelBtn" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -158.0
-margin_top = -55.6326
-margin_right = -31.0
-margin_bottom = -4.63257
+margin_left = -156.11
+margin_top = -67.0
+margin_right = -29.11
+margin_bottom = -16.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 25 )
 expand = true
 script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="TimeProgress/Timer" to="TimeProgress" method="_on_Timer_timeout"]
