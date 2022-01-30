@@ -33,7 +33,7 @@ func load_levels():
 	var level_buttons = get_children()
 	
 	for i in range(1, _page_size + 1):
-		level_buttons[i - 1].modulate.a = 0
+		level_buttons[i - 1].make_visible(false)
 	
 		var index = i + _page_index * _page_size
 		if(index >= LevelManager.level_count + 1):
@@ -41,5 +41,5 @@ func load_levels():
 		
 		var setting = load(Paths.MAIN_SETTING % index)
 		level_buttons[i - 1].update_settings(setting, index)
-		
-		level_buttons[i - 1].modulate.a = 1
+	
+		level_buttons[i - 1].make_visible(true)

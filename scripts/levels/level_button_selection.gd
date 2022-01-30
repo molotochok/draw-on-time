@@ -29,15 +29,18 @@ func _physics_process(_delta):
 		move_down()
 		
 func _on_mouse_entered():
-	if _parent.opened():
+	if interactable():
 		_move_dir = MoveDirection.UP
 
 func _on_mouse_exited():
-	if _parent.opened():
+	if interactable():
 		_move_dir = MoveDirection.DOWN
 
 func _on_resized():
 	update_initial_parent_pos()
+
+func interactable() -> bool:
+  return modulate.a > 0 && _parent.opened()
 
 func update_initial_parent_pos():
 	_initial_parent_pos = _parent.get_rect().position	

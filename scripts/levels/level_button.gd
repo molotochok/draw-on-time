@@ -20,7 +20,7 @@ func _ready():
 	assert(connect("button_down", self, "_on_button_down") == OK)
 
 func opened():
-  return _settings.opened
+	return _settings && _settings.opened
 
 func update_settings(settings: Settings, index: int):
 	_settings = settings
@@ -29,10 +29,11 @@ func update_settings(settings: Settings, index: int):
 	if opened():
 		background.set_texture(background_texture_opened)
 		preview.set_texture(settings.get_ref_preview_texture())
+		set_default_cursor_shape(CURSOR_POINTING_HAND)
 	else:
 		background.set_texture(background_texture_blocked)
 		preview.set_texture(null)
-		mouse_default_cursor_shape = 0
+		set_default_cursor_shape(CURSOR_ARROW)
 
 	update_stars(settings.get_stars())
 	
@@ -42,6 +43,13 @@ func update_stars(number: int):
 	stars[0].modulate.a = 1 if number > 0 else 0
 	stars[1].modulate.a = 1 if number > 1 else 0
 	stars[2].modulate.a = 1 if number > 2 else 0
+
+func make_visible(show: bool):
+	if show:
+		modulate.a = 1
+	else:
+		modulate.a = 0
+		set_default_cursor_shape(CURSOR_ARROW)
 
 func _pressed():
 	if(opened()):
