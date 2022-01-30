@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/time_progress.png" type="Texture" id=1]
 [ext_resource path="res://resources/settings/reference_creation/reference_creation.tres" type="Resource" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://materials/time_progress/time_progress.material" type="Material" id=9]
 [ext_resource path="res://scripts/main/time_progress.gd" type="Script" id=10]
 [ext_resource path="res://scripts/reference_creation/time_picker.gd" type="Script" id=11]
+[ext_resource path="res://sprites/refresh/refresh.png" type="Texture" id=12]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -22,18 +23,16 @@ __meta__ = {
 settings = ExtResource( 2 )
 load_from_resource = false
 
-[node name="Refresh" type="Button" parent="."]
+[node name="Refresh" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 224.122
+margin_left = 136.0
 margin_top = -55.0
-margin_right = 334.122
+margin_right = 334.0
 margin_bottom = -15.0
-text = "Refresh"
+texture_normal = ExtResource( 12 )
+expand = true
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="DrawingCanvas" type="Control" parent="."]
 anchor_right = 1.0
@@ -48,6 +47,7 @@ __meta__ = {
 }
 ref_texture_rect = NodePath("RefTextureRect")
 main_texture_rect = NodePath("MainTextureRect")
+pen_cursor = NodePath("PenCursor")
 
 [node name="RefTextureRect" type="TextureRect" parent="DrawingCanvas"]
 anchor_right = 1.0
@@ -65,6 +65,10 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PenCursor" type="Control" parent="DrawingCanvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Save" type="Button" parent="."]
 anchor_left = 1.0

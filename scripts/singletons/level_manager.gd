@@ -19,22 +19,23 @@ func get_level_count():
 
 
 ####### Public functions ###### 
+func load_prev_level():
+  current_level = int(max(current_level - 1, 1))
+  load_main_level(current_level)
+
 func load_next_level():
-  current_level += 1
-  
-  if(current_level > level_count):
-	  current_level = 1
-	
+  current_level = int(min(current_level + 1, level_count))
   load_main_level(current_level)
 
 func load_main_level(level = 1):
   current_level = level
-  if get_tree().change_scene(Paths.MAIN_LEVEL) != OK:
-	  print("An error occured when trying to switch to the main level: %s" % str(current_level))
+  assert(get_tree().change_scene(Paths.MAIN_LEVEL) == OK)
+
+func load_menu():
+  assert(get_tree().change_scene(Paths.MENU) == OK)
 
 func load_levels():
-  if get_tree().change_scene(Paths.LEVELS) != OK:
-	  print("An error occured when trying to switch to the 'levels' page")
+  assert(get_tree().change_scene(Paths.LEVELS) == OK)
 
 func quit():
 	get_tree().quit()
