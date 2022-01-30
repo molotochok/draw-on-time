@@ -2,11 +2,15 @@ extends Control
 
 class_name DrawingCanvas
 
+const _PEN_CURSOR_COLOR := Color(0.9, 0.71, 0.26, 1)
+
 export(NodePath) onready var ref_texture_rect = get_node(ref_texture_rect) as TextureRect
 export(NodePath) onready var main_texture_rect = get_node(main_texture_rect) as TextureRect
+# Used to display pen cursor
+export(NodePath) onready var pen_cursor = get_node(pen_cursor) as Control
 
 onready var _pen := Node2D.new()
-var _pen_size := 10.0
+onready var _pen_size := 10.0
 
 var _settings: Settings
 
@@ -21,7 +25,11 @@ func _ready():
 	init_main_texture_viewport()
 	init_handlers()
 
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func _process(_delta):
+	pen_cursor.update()
+
 	if(_can_draw):
 		_pen.update()
 
@@ -43,18 +51,29 @@ func _on_settings_initialized(settings: Settings):
 	ref_texture_rect.set_texture(settings.get_ref_texture())
 	main_texture_rect.get_material().set_shader_param("reference", settings.get_ref_texture())
 	
-	update_pen_size()
+	update_pen_size()	
 
 func _on_draw():
 	var mouse_pos = get_local_mouse_position()
 	
-	if(mouse_pos.x > 0 && mouse_pos.x < _viewport.size.x):
-		if(mouse_pos.y > 0 && mouse_pos.y < _viewport.size.y):
-			if Input.is_mouse_button_pressed(BUTTON_LEFT):
-				_pen.draw_circle(mouse_pos, _pen_size, _settings.color)
-				_pen.draw_line(mouse_pos, _prev_mouse_pos, _settings.color, _pen_size * 2)
+	if is_mouse_in_viewport(mouse_pos):
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			_pen.draw_circle(mouse_pos, _pen_size, _settings.color)
+			_pen.draw_line(mouse_pos, _prev_mouse_pos, _settings.color, _pen_size * 2)
 				
 	_prev_mouse_pos = mouse_pos
+
+func _on_pen_cursor_draw():
+	var mouse_pos = get_local_mouse_position()
+
+	if is_mouse_in_viewport(mouse_pos):
+		if(Input.get_mouse_mode() != Input.MOUSE_MODE_HIDDEN):
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+		pen_cursor.draw_circle(mouse_pos, _pen_size, _PEN_CURSOR_COLOR)
+	else:
+		if(Input.get_mouse_mode() != Input.MOUSE_MODE_VISIBLE):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_resized():
 	_viewport.size = get_rect().size
@@ -71,6 +90,7 @@ func init_main_texture_viewport():
 	
 func init_handlers():
 	assert(_pen.connect("draw", self, "_on_draw") == OK)
+	assert(pen_cursor.connect("draw", self, "_on_pen_cursor_draw") == OK)
 	
 	assert(connect("resized", self, "_on_resized") == OK)
 	
@@ -98,3 +118,7 @@ func update_pen_size():
 	
 	if(_viewport):
 		_pen_size *= (_viewport.size.x + _viewport.size.y) / 2
+
+func is_mouse_in_viewport(mouse_pos: Vector2) -> bool:
+	return mouse_pos.x > 0 && mouse_pos.x < _viewport.size.x \
+			&& mouse_pos.y > 0 && mouse_pos.y < _viewport.size.y
