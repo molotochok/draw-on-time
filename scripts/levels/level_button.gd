@@ -1,4 +1,4 @@
-extends Button
+extends InteractableTextureButton
 
 class_name LevelButton
 

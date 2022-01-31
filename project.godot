@@ -14,7 +14,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/main/drawing_canvas.gd"
 }, {
-"base": "Button",
+"base": "TextureButton",
+"class": "InteractableTextureButton",
+"language": "GDScript",
+"path": "res://scripts/interactable_texture_button.gd"
+}, {
+"base": "InteractableTextureButton",
 "class": "LevelButton",
 "language": "GDScript",
 "path": "res://scripts/levels/level_button.gd"
@@ -36,6 +41,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DrawingCanvas": "",
+"InteractableTextureButton": "",
 "LevelButton": "",
 "Math": "",
 "ScoreCalculator": "",

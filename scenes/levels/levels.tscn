@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/components/level_button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/level_buttons.gd" type="Script" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://sprites/next/next_hovered.png" type="Texture" id=8]
 [ext_resource path="res://sprites/next/next_pressed.png" type="Texture" id=9]
 [ext_resource path="res://scripts/levels/back_to_menu_btn.gd" type="Script" id=10]
-[ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://sprites/menu/menu_hovered.png" type="Texture" id=11]
+[ext_resource path="res://sprites/menu/menu_pressed.png" type="Texture" id=12]
+[ext_resource path="res://sprites/menu/menu.png" type="Texture" id=13]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -228,8 +230,19 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="BackBtn" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 11 )
+[node name="MenuBtn" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 35.363
+margin_top = -66.876
+margin_right = 162.363
+margin_bottom = -15.876
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
+expand = true
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

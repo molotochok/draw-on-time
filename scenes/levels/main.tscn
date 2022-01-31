@@ -61,7 +61,10 @@ __meta__ = {
 [node name="TimeProgress" type="TextureRect" parent="."]
 material = ExtResource( 1 )
 anchor_right = 1.0
-margin_bottom = 14.0
+margin_left = 29.0
+margin_top = 17.0
+margin_right = -29.0
+margin_bottom = 31.0
 texture = ExtResource( 2 )
 expand = true
 script = ExtResource( 8 )
@@ -127,10 +130,10 @@ margin_bottom = 40.0
 [node name="Score" type="Control" parent="AlbumBackground"]
 anchor_left = 0.984
 anchor_right = 0.984
-margin_left = -182.41
-margin_top = 21.7622
-margin_right = -24.4099
-margin_bottom = 74.7622
+margin_left = -153.28
+margin_top = 22.0
+margin_right = -23.28
+margin_bottom = 59.0
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -143,33 +146,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Stars" type="HBoxContainer" parent="AlbumBackground/Score"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.208
+anchor_bottom = 1.267
+margin_right = -21.008
+margin_bottom = -8.01
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Star1" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_right = 50.0
-margin_bottom = 53.0
-rect_min_size = Vector2( 50, 0 )
+margin_left = 7.0
+margin_right = 45.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
 texture = ExtResource( 20 )
 expand = true
 
 [node name="Star2" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_left = 54.0
-margin_right = 104.0
-margin_bottom = 53.0
-rect_min_size = Vector2( 50, 0 )
+margin_left = 49.0
+margin_right = 87.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
 texture = ExtResource( 20 )
 expand = true
 
 [node name="Star3" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_left = 108.0
-margin_right = 158.0
-margin_bottom = 53.0
-rect_min_size = Vector2( 50, 0 )
+margin_left = 91.0
+margin_right = 129.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
 texture = ExtResource( 20 )
 expand = true
 __meta__ = {
@@ -179,10 +185,10 @@ __meta__ = {
 [node name="LevelsBtn" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 35.3628
-margin_top = -66.8762
-margin_right = 162.363
-margin_bottom = -15.8762
+margin_left = 35.0
+margin_top = -67.0
+margin_right = 161.0
+margin_bottom = -17.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 30 )

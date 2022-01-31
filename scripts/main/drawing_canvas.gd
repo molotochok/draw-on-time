@@ -2,7 +2,7 @@ extends Control
 
 class_name DrawingCanvas
 
-const _PEN_CURSOR_COLOR := Color(0.9, 0.71, 0.26, 1)
+const _PEN_CURSOR_COLOR := Color(0, 0, 0, 0.5)
 
 export(NodePath) onready var ref_texture_rect = get_node(ref_texture_rect) as TextureRect
 export(NodePath) onready var main_texture_rect = get_node(main_texture_rect) as TextureRect
