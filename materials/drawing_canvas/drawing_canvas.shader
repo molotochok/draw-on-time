@@ -1,6 +1,8 @@
 shader_type canvas_item;
 
 uniform sampler2D reference;
+uniform vec4 correctColor;
+uniform vec4 wrongColor;
 
 void fragment() {
 	vec4 curTexture = texture(TEXTURE, UV);
@@ -8,12 +10,8 @@ void fragment() {
 	
 	vec4 color = curTexture;
 	
-	if(curTexture.a > 0.9 && refTexture.a > 0.9) {
-		color = vec4(0, 1, 0, 1);
-	} else {
-		color.r = 1.0;
-		color.g = 0.0;
-		color.b = 0.0;
+	if(curTexture.a > 0.9) {
+		color = refTexture.a > 0.9 ? correctColor : wrongColor
 	}
 	
 	COLOR = color;
