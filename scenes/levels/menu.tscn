@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/menu/play_btn.gd" type="Script" id=3]
 [ext_resource path="res://scripts/menu/quit_btn.gd" type="Script" id=4]
 [ext_resource path="res://sprites/play/play.png" type="Texture" id=5]
-[ext_resource path="res://sprites/album-front.png" type="Texture" id=6]
+[ext_resource path="res://sprites/album/album-front.png" type="Texture" id=6]
 [ext_resource path="res://sprites/quit/quit.png" type="Texture" id=7]
 [ext_resource path="res://sprites/quit/quit_pressed.png" type="Texture" id=8]
 [ext_resource path="res://sprites/background.png" type="Texture" id=10]
@@ -27,10 +27,10 @@ expand = true
 [node name="Album" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 56.0
-margin_top = 42.0
-margin_right = -48.0
-margin_bottom = -78.0
+margin_left = 12.898
+margin_top = 25.332
+margin_right = -2.10199
+margin_bottom = -47.668
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {

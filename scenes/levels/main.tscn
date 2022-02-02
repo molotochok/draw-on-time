@@ -13,7 +13,7 @@
 [ext_resource path="res://scripts/main/open_levels_btn.gd" type="Script" id=11]
 [ext_resource path="res://scripts/main/drawing_canvas.gd" type="Script" id=12]
 [ext_resource path="res://scripts/score.gd" type="Script" id=13]
-[ext_resource path="res://sprites/album.png" type="Texture" id=14]
+[ext_resource path="res://sprites/album/album.png" type="Texture" id=14]
 [ext_resource path="res://sprites/next_level/next_level.png" type="Texture" id=15]
 [ext_resource path="res://scripts/main/next_level_btn.gd" type="Script" id=16]
 [ext_resource path="res://sprites/next_level/next_level_hovered.png" type="Texture" id=17]
@@ -79,10 +79,10 @@ one_shot = true
 [node name="AlbumBackground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 56.0
-margin_top = 42.0
-margin_right = -48.0
-margin_bottom = -78.0
+margin_left = 12.898
+margin_top = 25.3317
+margin_right = -2.10199
+margin_bottom = -47.6683
 texture = ExtResource( 14 )
 expand = true
 __meta__ = {
@@ -90,14 +90,14 @@ __meta__ = {
 }
 
 [node name="DrawingCanvas" type="Control" parent="AlbumBackground"]
-anchor_left = 0.054
-anchor_top = 0.013
-anchor_right = 0.978
-anchor_bottom = 0.97
-margin_left = -0.408001
-margin_top = -4.254
-margin_right = 4.94397
-margin_bottom = -0.260071
+anchor_left = 0.071
+anchor_top = 0.046
+anchor_right = 0.954
+anchor_bottom = 0.913
+margin_left = 0.361
+margin_top = -0.242002
+margin_right = 0.41394
+margin_bottom = -0.151031
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,12 +128,14 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Score" type="Control" parent="AlbumBackground"]
-anchor_left = 0.984
-anchor_right = 0.984
-margin_left = -153.28
-margin_top = 22.0
-margin_right = -23.28
-margin_bottom = 59.0
+anchor_left = 0.95
+anchor_top = 0.052
+anchor_right = 0.95
+anchor_bottom = 0.052
+margin_left = -145.513
+margin_top = 11.6973
+margin_right = -15.5131
+margin_bottom = 48.6973
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -146,10 +148,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Stars" type="HBoxContainer" parent="AlbumBackground/Score"]
-anchor_right = 1.208
-anchor_bottom = 1.267
-margin_right = -21.008
-margin_bottom = -8.01
+anchor_right = 1.046
+anchor_bottom = 1.051
+margin_right = 0.0519867
+margin_bottom = -0.0180054
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false

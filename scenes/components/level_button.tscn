@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="IndexLabel" type="Label" parent="Background"]
-anchor_left = 0.363389
-anchor_top = -0.0124407
-anchor_right = 0.616723
-anchor_bottom = 0.214226
+anchor_left = 0.370813
+anchor_top = -0.00575896
+anchor_right = 0.624147
+anchor_bottom = 0.220908
 text = "1"
 align = 1
 valign = 1
