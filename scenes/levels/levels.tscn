@@ -44,13 +44,13 @@ __meta__ = {
 }
 
 [node name="PrevLevelPageBtn" type="TextureButton" parent="Album"]
-anchor_left = 0.085084
-anchor_top = 0.894
-anchor_right = 0.132
-anchor_bottom = 0.948029
-margin_left = 45.0
-margin_top = 0.14798
-margin_right = 45.336
+anchor_left = 0.091
+anchor_top = 0.895586
+anchor_right = 0.13
+anchor_bottom = 0.939336
+margin_left = 36.28
+margin_top = -3.05176e-05
+margin_right = 36.4
 rect_scale = Vector2( -1, 1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
@@ -67,9 +67,9 @@ anchor_left = 0.139
 anchor_top = 0.077
 anchor_right = 0.898
 anchor_bottom = 0.79
-margin_left = -30.88
+margin_left = -29.88
 margin_top = -12.96
-margin_right = 30.84
+margin_right = 31.84
 margin_bottom = 16.8
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -219,10 +219,14 @@ margin_right = 756.0
 margin_bottom = 371.0
 
 [node name="NextLevelPageBtn" type="TextureButton" parent="Album"]
-anchor_left = 0.914916
-anchor_top = 0.894265
-anchor_right = 0.962185
-anchor_bottom = 0.948029
+anchor_left = 0.905133
+anchor_top = 0.903
+anchor_right = 0.944
+anchor_bottom = 0.946
+margin_left = -3.47681
+margin_top = -3.89017
+margin_right = -3.23413
+margin_bottom = -3.53015
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
@@ -230,7 +234,7 @@ texture_hover = ExtResource( 8 )
 expand = true
 script = ExtResource( 6 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="MenuBtn" type="TextureButton" parent="."]
