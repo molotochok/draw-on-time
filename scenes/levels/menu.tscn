@@ -27,10 +27,10 @@ expand = true
 [node name="Album" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.898
-margin_top = 25.332
-margin_right = -2.10199
-margin_bottom = -47.668
+margin_left = 13.4926
+margin_top = 22.9536
+margin_right = -1.50739
+margin_bottom = -50.0464
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {
@@ -38,10 +38,10 @@ __meta__ = {
 }
 
 [node name="Paper" type="TextureRect" parent="Album"]
-anchor_left = 0.235294
-anchor_top = 0.123423
-anchor_right = 0.767857
-anchor_bottom = 0.836685
+anchor_left = 0.188305
+anchor_top = 0.155598
+anchor_right = 0.813677
+anchor_bottom = 0.802657
 texture = ExtResource( 12 )
 expand = true
 __meta__ = {
@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Play" type="TextureButton" parent="Album/Paper"]
-anchor_left = 0.33134
-anchor_top = 0.509819
-anchor_right = 0.642977
-anchor_bottom = 0.663085
+anchor_left = 0.347068
+anchor_top = 0.519062
+anchor_right = 0.627575
+anchor_bottom = 0.656892
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 2 )
@@ -64,10 +64,10 @@ __meta__ = {
 }
 
 [node name="Quit" type="TextureButton" parent="Album/Paper"]
-anchor_left = 0.318706
-anchor_top = 0.740324
-anchor_right = 0.655984
-anchor_bottom = 0.908666
+anchor_left = 0.339144
+anchor_top = 0.750733
+anchor_right = 0.633914
+anchor_bottom = 0.897361
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
@@ -79,11 +79,10 @@ __meta__ = {
 }
 
 [node name="Title" type="TextureRect" parent="Album/Paper"]
-modulate = Color( 0.364706, 0.415686, 0.333333, 1 )
-anchor_left = 0.00726186
-anchor_top = 0.0776037
-anchor_right = 0.975704
-anchor_bottom = 0.4168
+anchor_left = 0.0412044
+anchor_top = 0.129032
+anchor_right = 0.958796
+anchor_bottom = 0.325513
 texture = ExtResource( 11 )
 expand = true
 __meta__ = {
