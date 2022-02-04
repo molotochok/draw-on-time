@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/timer_border.png-efbebb36eeb11ce987d43625b5ff9be8.stex"
+path="res://.import/menu_paper.png-060e4cf89e0d25636ea9fe0cd545deab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/timer/timer_border.png"
-dest_files=[ "res://.import/timer_border.png-efbebb36eeb11ce987d43625b5ff9be8.stex" ]
+source_file="res://sprites/menu_paper/menu_paper.png"
+dest_files=[ "res://.import/menu_paper.png-060e4cf89e0d25636ea9fe0cd545deab.stex" ]
 
 [params]
 

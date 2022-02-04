@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/time_progress.png-82f90c0f6bb4390969b32510a1ce8435.stex"
+path="res://.import/refresh_disabled.png-e1ffcfeea2a7e7de590321c4b361241b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/time_progress.png"
-dest_files=[ "res://.import/time_progress.png-82f90c0f6bb4390969b32510a1ce8435.stex" ]
+source_file="res://sprites/refresh/refresh_disabled.png"
+dest_files=[ "res://.import/refresh_disabled.png-e1ffcfeea2a7e7de590321c4b361241b.stex" ]
 
 [params]
 
