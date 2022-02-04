@@ -3,20 +3,24 @@ shader_type canvas_item;
 uniform float max_time;
 uniform float curr_time;
 
-uniform float red_factor = 0.9f;
-uniform float green_factor = 0.9f;
-uniform float blue_factor = 0.15f;
+uniform vec4 start_color = vec4(0, 1, 0, 1);
+uniform vec4 end_color = vec4(1, 0, 0, 1);
+
+uniform bool update_color = true;
+uniform bool update_size = true;
 
 void fragment() {
 	vec4 color = texture(TEXTURE, UV);
 	
-	if(UV.x * max_time < max_time - curr_time) {
+	if(update_size && UV.x * max_time < max_time - curr_time) {
 		color.a = 0f;
-	} else {
+	}
+	
+	if(update_color) {
 		float div = curr_time / max_time;
-		color.r *= (1.0 - div) * red_factor;
-		color.g *= div * green_factor;
-		color.b *= blue_factor;
+		color.r *= mix(start_color.r, end_color.r, 1f - curr_time / max_time);
+		color.g *= mix(start_color.g, end_color.g, 1f - curr_time / max_time);
+		color.b *= mix(start_color.b, end_color.b, 1f - curr_time / max_time);
 	}
 	
 	COLOR = color;

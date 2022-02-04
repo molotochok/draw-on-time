@@ -16,6 +16,7 @@ var _settings: Settings
 
 var _prev_mouse_pos := Vector2()
 var _can_draw := true
+var _drawing_started := false
 var _viewport: Viewport
 
 var _score_calculator := ScoreCalculator.new()
@@ -41,6 +42,8 @@ func _on_refreshed():
 	if !_can_draw:
 		_can_draw = true
 
+	_drawing_started = false
+
 func _on_finished():
 	_can_draw = false
 	_score_calculator.calculate(main_texture_rect, ref_texture_rect)
@@ -58,6 +61,10 @@ func _on_draw():
 	
 	if is_mouse_in_viewport(mouse_pos):
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			if !_drawing_started:
+				GameEvents.emit_signal("drawing_started")
+				_drawing_started = true
+
 			_pen.draw_circle(mouse_pos, _pen_size, _settings.color)
 			_pen.draw_line(mouse_pos, _prev_mouse_pos, _settings.color, _pen_size * 2)
 				
