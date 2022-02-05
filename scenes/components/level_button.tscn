@@ -5,7 +5,7 @@
 [ext_resource path="res://scripts/levels/level_button.gd" type="Script" id=3]
 [ext_resource path="res://sprites/level/level.png" type="Texture" id=4]
 [ext_resource path="res://resources/themes/level_button.theme" type="Theme" id=5]
-[ext_resource path="res://scripts/levels/level_button_selection.gd" type="Script" id=7]
+[ext_resource path="res://scripts/levels/level_button_mover.gd" type="Script" id=6]
 [ext_resource path="res://sprites/level/level_blocked.png" type="Texture" id=8]
 
 [node name="LevelButton" type="TextureButton"]
@@ -64,7 +64,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-start_size = Vector2( 600, 10 )
+start_size = Vector2( 600, 5 )
 end_size = Vector2( 1920, 24 )
 
 [node name="StarsContainer" type="HBoxContainer" parent="Background"]
@@ -98,15 +98,13 @@ margin_left = 54.0
 margin_right = 78.0
 margin_bottom = 21.0
 
-[node name="Selection" type="Control" parent="."]
+[node name="UpDownMover" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -0.222725
-margin_bottom = -0.222717
 mouse_filter = 1
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 _step = 85.0
-_max_offset = 6
+_max_offset_down = 0.0

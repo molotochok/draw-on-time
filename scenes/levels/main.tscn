@@ -66,9 +66,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 12.898
-margin_top = 25.406
+margin_top = 28.9
 margin_right = -2.10199
-margin_bottom = -47.594
+margin_bottom = -44.1
 texture = ExtResource( 14 )
 expand = true
 __meta__ = {
@@ -222,6 +222,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 _step = 10.0
+_max_offset_up = 7.0
+_max_offset_down = 7.0
 should_stop = false
 _move_dir = 1
 
