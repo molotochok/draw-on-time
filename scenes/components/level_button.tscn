@@ -53,6 +53,10 @@ anchor_left = 0.370813
 anchor_top = -0.00575896
 anchor_right = 0.624147
 anchor_bottom = 0.220908
+margin_left = -0.121811
+margin_top = -0.000156045
+margin_right = -0.121811
+margin_bottom = -0.000152588
 text = "1"
 align = 1
 valign = 1
@@ -60,8 +64,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-start_size = Vector2( 815, 10 )
-end_size = Vector2( 1500, 18 )
+start_size = Vector2( 600, 10 )
+end_size = Vector2( 1920, 24 )
 
 [node name="StarsContainer" type="HBoxContainer" parent="Background"]
 anchor_left = 0.243965
@@ -104,3 +108,5 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+_step = 85.0
+_max_offset = 6
