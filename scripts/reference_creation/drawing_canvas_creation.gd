@@ -29,4 +29,7 @@ func save_settings(index: int):
   var settings = _settings.duplicate()
   settings.index = index
 
+  if(index <= 1):
+    settings.opened = true
+
   GameEvents.emit_signal("settings_save_requested", settings)  

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/time_progress.png-cf89cd94063886267b6376ce597402b0.stex"
+path="res://.import/white_rect.png-a037e3cb16728ea3af107ea6e11440f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu_paper/time_progress.png"
-dest_files=[ "res://.import/time_progress.png-cf89cd94063886267b6376ce597402b0.stex" ]
+source_file="res://sprites/white_rect.png"
+dest_files=[ "res://.import/white_rect.png-a037e3cb16728ea3af107ea6e11440f3.stex" ]
 
 [params]
 

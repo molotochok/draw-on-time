@@ -20,6 +20,7 @@ func _on_settings_initialized(settings: Settings):
 
 func _on_time_changed(time: float):
 	update_max_time(time)
+	start_timer()
 
 func _on_drawing_started():
 	start_timer()

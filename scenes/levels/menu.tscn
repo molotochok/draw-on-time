@@ -40,10 +40,10 @@ __meta__ = {
 }
 
 [node name="Paper" type="TextureRect" parent="Album"]
-anchor_left = 0.231791
-anchor_top = 0.125237
-anchor_right = 0.770939
-anchor_bottom = 0.836812
+anchor_left = 0.231913
+anchor_top = 0.132827
+anchor_right = 0.77106
+anchor_bottom = 0.827324
 texture = ExtResource( 12 )
 expand = true
 __meta__ = {
