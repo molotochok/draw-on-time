@@ -19,7 +19,7 @@
 [ext_resource path="res://sprites/next_level/next_level_hovered.png" type="Texture" id=17]
 [ext_resource path="res://sprites/next_level/next_level_pressed.png" type="Texture" id=18]
 [ext_resource path="res://scripts/main/prev_level_btn.gd" type="Script" id=19]
-[ext_resource path="res://sprites/star/star_hidden.png" type="Texture" id=20]
+[ext_resource path="res://scenes/components/score_star.tscn" type="PackedScene" id=20]
 [ext_resource path="res://sprites/star/star.png" type="Texture" id=21]
 [ext_resource path="res://sprites/prev_level/prev_level_pressed.png" type="Texture" id=22]
 [ext_resource path="res://sprites/prev_level/prev_level_hovered.png" type="Texture" id=23]
@@ -120,57 +120,31 @@ anchor_left = 0.95
 anchor_top = 0.052
 anchor_right = 0.95
 anchor_bottom = 0.052
-margin_left = -145.513
-margin_top = 11.6973
-margin_right = -15.5131
-margin_bottom = 48.6973
+margin_left = -145.55
+margin_top = 11.596
+margin_right = -15.55
+margin_bottom = 49.596
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-stars_container = NodePath("Stars")
 star_texture = ExtResource( 21 )
 
-[node name="Background" type="TextureRect" parent="AlbumBackground/Score"]
-anchor_right = 1.0
+[node name="Star1" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
+anchor_right = 0.292308
+anchor_bottom = 1.0
+margin_right = -33.1758
+margin_bottom = -35.5933
+
+[node name="Star2" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
+anchor_left = 0.346119
+anchor_right = 0.638427
 anchor_bottom = 1.0
 
-[node name="Stars" type="HBoxContainer" parent="AlbumBackground/Score"]
-anchor_right = 1.046
-anchor_bottom = 1.051
-margin_right = 0.0519867
-margin_bottom = -0.0180054
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Star1" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_left = 7.0
-margin_right = 45.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 38, 38 )
-texture = ExtResource( 20 )
-expand = true
-
-[node name="Star2" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_left = 49.0
-margin_right = 87.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 38, 38 )
-texture = ExtResource( 20 )
-expand = true
-
-[node name="Star3" type="TextureRect" parent="AlbumBackground/Score/Stars"]
-margin_left = 91.0
-margin_right = 129.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 38, 38 )
-texture = ExtResource( 20 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Star3" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
+anchor_left = 0.692299
+anchor_right = 0.984607
+anchor_bottom = 1.0
 
 [node name="Tutorial" type="Control" parent="AlbumBackground"]
 anchor_left = 0.0396432

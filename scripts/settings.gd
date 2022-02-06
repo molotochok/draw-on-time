@@ -12,20 +12,23 @@ export(bool) var opened = false
 var _ref_texture : Texture
 var _ref_preview_texture : Texture
 
-func get_stars() -> int:
-	if(score >= 50 && score < 75):
+static func get_stars_by(score: float) -> int:
+	if(score >= 65 && score < 80):
 		return 1
-	
-	if(score >= 75 && score < 90):
+
+	if(score >= 80 && score < 95):
 		return 2
-		
-	if(score >= 90):
-		return 3
 	
+	if(score >= 95):
+		return 3
+
 	return 0
 
+func get_stars() -> int:
+	return get_stars_by(score)
+
 func passed() -> bool:
-  return get_stars() > 0
+	return get_stars() > 0
 
 func get_ref_texture() -> Texture:
 	if(!_ref_texture):

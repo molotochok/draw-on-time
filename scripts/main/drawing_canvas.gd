@@ -86,9 +86,6 @@ func _on_resized():
 	_viewport.size = get_rect().size
 	update_pen_size()
 	
-func _exit_tree():
-	_score_calculator.dispose()
-
 ##### Helpful functions #####
 func init_main_texture_viewport(): 
 	set_viewport()
