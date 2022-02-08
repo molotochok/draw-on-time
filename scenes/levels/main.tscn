@@ -197,6 +197,8 @@ _max_offset_down = 7.0
 should_stop = false
 _move_dir = 1
 
+[node name="Timer" type="Timer" parent="AlbumBackground/Tutorial/Text"]
+
 [node name="LevelsBtn" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0

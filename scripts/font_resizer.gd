@@ -32,7 +32,7 @@ func update_size_in_loop():
 		
 		add_font_override(font_name, font)
 
-		yield(get_tree().create_timer(time), "timeout")
+		$Timer.start(time); yield($Timer, "timeout")
 
 func _on_resized():
 	var size = OS.get_window_size()
