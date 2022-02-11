@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/resources/finish_messages.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+messages = [ [ "You can do it", "Don't give up", "Keep pushing", "Just a little practice and you'll do it", "Do the impossible" ], [ "Great, you passed it", "Good work", "Keep it up", "You made it", "You did it" ], [ "Great work", "Nice one", "Almost perfect", "Almost ideal", "Good job" ], [ "Amazing", "Awesome", "Perfect", "Too easy for you", "Fantastic" ] ]
