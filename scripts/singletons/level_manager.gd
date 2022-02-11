@@ -38,7 +38,10 @@ func load_levels():
   assert(get_tree().change_scene(Paths.LEVELS) == OK)
 
 func quit():
-	get_tree().quit()
+  # Closes the window tab in a Browser if HTML5
+  if OS.has_feature('JavaScript'):
+    JavaScript.eval("window.close()")
+  get_tree().quit()
 	
 func increment_level_count():
 	level_count += 1
