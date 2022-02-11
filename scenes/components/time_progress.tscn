@@ -20,11 +20,11 @@ timer = NodePath("Timer")
 one_shot = true
 
 [node name="Shadow" type="TextureRect" parent="."]
-modulate = Color( 0.580392, 0.580392, 0.580392, 1 )
+modulate = Color( 0.28125, 0.172485, 0.0999756, 1 )
 anchor_left = -0.00547046
-anchor_top = -0.3125
-anchor_right = 1.00656
-anchor_bottom = 1.4375
+anchor_top = -0.25
+anchor_right = 1.00547
+anchor_bottom = 1.375
 margin_left = 9.53674e-07
 texture = ExtResource( 1 )
 expand = true
@@ -33,7 +33,7 @@ __meta__ = {
 }
 
 [node name="Border" type="TextureRect" parent="."]
-modulate = Color( 0.839216, 0.839216, 0.839216, 1 )
+modulate = Color( 0.513726, 0.313726, 0.180392, 1 )
 anchor_left = -0.00438596
 anchor_top = -0.25
 anchor_right = 1.00548
@@ -50,8 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = 1.0
-margin_right = -2.0
-margin_bottom = -1.0
+margin_bottom = -1.00002
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -63,6 +62,8 @@ modulate = Color( 0.341176, 0.878431, 0.231373, 1 )
 material = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1.0
+margin_bottom = -1.90735e-05
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
