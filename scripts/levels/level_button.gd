@@ -20,23 +20,27 @@ func _ready():
 	assert(connect("button_down", self, "_on_button_down") == OK)
 
 func opened():
-	return _settings && _settings.opened
+	return _settings && _settings.get_stats().opened
 
 func update_settings(settings: Settings, index: int):
 	_settings = settings
 	index_label.text = str(index)
 
 	if opened():
-		background.set_texture(background_texture_opened)
-		preview.set_texture(settings.get_ref_preview_texture())
-		set_default_cursor_shape(CURSOR_POINTING_HAND)
+		update_properties(
+			background_texture_opened, 
+			settings.get_ref_preview_texture(), 
+			CURSOR_POINTING_HAND, settings.get_stats().get_stars()
+		)
 	else:
-		background.set_texture(background_texture_blocked)
-		preview.set_texture(null)
-		set_default_cursor_shape(CURSOR_ARROW)
+		update_properties(background_texture_blocked, null, CURSOR_ARROW, 0)
 
-	update_stars(settings.get_stars())
-	
+func update_properties(background_texture, preview_texture, cursor_shape, stars):
+	background.set_texture(background_texture)
+	preview.set_texture(preview_texture)
+	set_default_cursor_shape(cursor_shape)
+	update_stars(stars)
+
 func update_stars(number: int):
 	var stars = stars_container.get_children()
 

@@ -4,19 +4,19 @@ export(NodePath) onready var anim_player = get_node(anim_player) as AnimationPla
 
 func _init():
 	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
-	assert(GameEvents.connect("settings_updated", self, "_on_settings_updated") == OK)
+	assert(GameEvents.connect("stats_updated", self, "_on_stats_updated") == OK)
 
 func _pressed():
 	LevelManager.load_next_level()
 
 func _on_settings_initialized(settings: Settings):
-	toggle_disable_by(settings, false)
+	toggle_disable_by(settings.get_stats(), false)
 
-func _on_settings_updated(settings: Settings):
-	toggle_disable_by(settings, true)
+func _on_stats_updated(stats: Stats):
+	toggle_disable_by(stats, true)
 
-func toggle_disable_by(settings: Settings, should_animate: bool):
-	if should_disable(settings):
+func toggle_disable_by(stats: Stats, should_animate: bool):
+	if should_disable(stats):
 		toggle_disable(true)
 		return
 
@@ -25,5 +25,5 @@ func toggle_disable_by(settings: Settings, should_animate: bool):
 	else:
 		toggle_disable(false)
 
-func should_disable(settings: Settings):
-	return settings.index >= LevelManager.level_count || !settings.passed()
+func should_disable(stats: Stats):
+	return stats.index >= LevelManager.level_count || !stats.passed()

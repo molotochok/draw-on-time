@@ -8,11 +8,11 @@ func _ready():
 		
 func _on_mouse_entered():
 	if interactable():
-		_move_dir = MoveDirection.UP
+		move_dir = MoveDirection.UP
 
 func _on_mouse_exited():
 	if interactable():
-		_move_dir = MoveDirection.DOWN
+		move_dir = MoveDirection.DOWN
 
 func interactable() -> bool:
 	return modulate.a > 0 && _parent.opened()

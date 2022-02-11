@@ -2,6 +2,10 @@ extends Node
 
 const MAIN_SETTINGS := "res://resources/settings/main"
 const MAIN_SETTING := MAIN_SETTINGS + "/%s.tres" 
+
+# Player stats will be saved here
+const STATS := "user://%s.tres"
+
 const MAIN_LEVEL := "res://scenes/levels/main.tscn"
 const LEVELS := "res://scenes/levels/levels.tscn"
 const MENU := "res://scenes/levels/menu.tscn"

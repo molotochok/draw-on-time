@@ -40,8 +40,6 @@ time = 10.0
 pen_size = 0.05
 color = Color( 1, 1, 1, 1 )
 index = 1
-score = 0.0
-opened = false
 
 [sub_resource type="Animation" id=2]
 resource_name = "finish_message_displayer"
@@ -165,6 +163,7 @@ __meta__ = {
 }
 
 [node name="ClickToDrawText" type="Label" parent="AlbumBackground/Tutorial"]
+visible = false
 modulate = Color( 0.94902, 0.968627, 0.388235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -192,11 +191,11 @@ script = ExtResource( 34 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-_step = 10.0
-_max_offset_up = 7.0
-_max_offset_down = 7.0
+step = 6.0
+max_offset_up = 5.0
+max_offset_down = 5.0
 should_stop = false
-_move_dir = 1
+move_dir = 1
 
 [node name="Timer" type="Timer" parent="AlbumBackground/Tutorial/ClickToDrawText"]
 

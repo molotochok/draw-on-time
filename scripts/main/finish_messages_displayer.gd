@@ -16,7 +16,7 @@ func _on_refreshed():
   hide()
 
 func _on_score_calculated(score: float):
-  show_message(Settings.get_stars_by(score))
+  show_message(Stats.get_stars_by(score))
   show_animated()
 
 func show_animated():

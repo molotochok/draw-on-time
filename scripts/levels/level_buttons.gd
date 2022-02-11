@@ -26,22 +26,25 @@ func change_page(new_page_index: int):
 	load_levels()
 
 func toggle_page_change_btns():
-	# prev_btn.modulate.a = 0 if _page_index == 0 else 1
-	# next_btn.modulate.a = 0 if (_page_index + 1) * _page_size >= LevelManager.level_count else 1
-  prev_btn.toggle_visibility(_page_index != 0, true)
-  next_btn.toggle_visibility((_page_index + 1) * _page_size < LevelManager.level_count, true)
+	prev_btn.toggle_visibility(_page_index != 0, true)
+	next_btn.toggle_visibility((_page_index + 1) * _page_size < LevelManager.level_count, true)
 
 func load_levels():
 	var level_buttons = get_children()
 	
+	var prev_settings: Settings = null
 	for i in range(1, _page_size + 1):
 		level_buttons[i - 1].toggle_visibility(false, true)
 	
 		var index = i + _page_index * _page_size
 		if(index >= LevelManager.level_count + 1):
 			continue
+
+		var settings: Settings = load(Paths.MAIN_SETTING % index) \
+			if prev_settings == null || prev_settings.get_stats().opened \
+			else null
 		
-		var setting = load(Paths.MAIN_SETTING % index)
-		level_buttons[i - 1].update_settings(setting, index)
-	
+		prev_settings = settings
+
+		level_buttons[i - 1].update_settings(settings, index)
 		level_buttons[i - 1].toggle_visibility(true, false)
