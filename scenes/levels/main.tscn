@@ -90,9 +90,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 12.898
-margin_top = 28.9
+margin_top = 30.0
 margin_right = -2.10199
-margin_bottom = -44.1
+margin_bottom = -43.0
 texture = ExtResource( 14 )
 expand = true
 __meta__ = {
@@ -163,7 +163,6 @@ __meta__ = {
 }
 
 [node name="ClickToDrawText" type="Label" parent="AlbumBackground/Tutorial"]
-visible = false
 modulate = Color( 0.94902, 0.968627, 0.388235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0

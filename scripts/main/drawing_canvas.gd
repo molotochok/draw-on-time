@@ -28,7 +28,7 @@ func _ready():
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _process(_delta):
+func _physics_process(_delta):
 	pen_cursor.update()
 
 	if(_can_draw):
