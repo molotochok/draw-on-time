@@ -87,12 +87,14 @@ __meta__ = {
 }
 
 [node name="AlbumBackground" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.898
-margin_top = 34.0
-margin_right = -2.10199
-margin_bottom = -39.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -943.0
+margin_top = -500.0
+margin_right = 943.0
+margin_bottom = 485.0
 texture = ExtResource( 14 )
 expand = true
 __meta__ = {
@@ -231,12 +233,9 @@ anchor_bottom = 1.0
 text = "Finish text"
 align = 1
 valign = 1
-script = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-start_size = Vector2( 600, 22 )
-end_size = Vector2( 1920, 48 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AlbumBackground/FinishMessagesDisplayer"]
 playback_speed = 2.5
@@ -247,10 +246,10 @@ anchor_left = 0.95
 anchor_top = 0.052
 anchor_right = 0.95
 anchor_bottom = 0.052
-margin_left = -145.55
-margin_top = 11.596
-margin_right = -15.55
-margin_bottom = 49.596
+margin_left = -157.565
+margin_top = 11.5638
+margin_right = -17.5649
+margin_bottom = 55.5638
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -258,28 +257,32 @@ __meta__ = {
 star_texture = ExtResource( 21 )
 
 [node name="Star1" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
-anchor_right = 0.292308
-anchor_bottom = 1.0
-margin_right = -33.1758
-margin_bottom = -35.5933
+anchor_right = 0.298
+anchor_bottom = 0.966
+margin_right = -7.752
+margin_bottom = -6.647
 
 [node name="Star2" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
 anchor_left = 0.346119
-anchor_right = 0.638427
-anchor_bottom = 1.0
+anchor_right = 0.644
+anchor_bottom = 0.966
+margin_right = -7.77254
+margin_bottom = -6.647
 
 [node name="Star3" parent="AlbumBackground/Score" instance=ExtResource( 20 )]
 anchor_left = 0.692299
-anchor_right = 0.984607
-anchor_bottom = 1.0
+anchor_right = 0.99
+anchor_bottom = 0.966
+margin_right = -7.74914
+margin_bottom = -6.647
 
 [node name="LevelsBtn" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 35.0
-margin_top = -71.0
-margin_right = 161.0
-margin_bottom = -21.0
+margin_left = 43.0
+margin_top = -99.3303
+margin_right = 212.0
+margin_bottom = -31.3303
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 30 )
@@ -295,10 +298,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -151.311
-margin_top = -71.0
-margin_right = 11.6892
-margin_bottom = -20.0
+margin_left = -166.901
+margin_top = -99.3303
+margin_right = 52.0989
+margin_bottom = -31.3303
 mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource( 7 )
@@ -316,10 +319,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -307.894
-margin_top = -71.0
-margin_right = -180.894
-margin_bottom = -20.0
+margin_left = -420.105
+margin_top = -99.3303
+margin_right = -255.105
+margin_bottom = -31.3303
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 22 )
@@ -332,9 +335,17 @@ __meta__ = {
 }
 
 [node name="NextLevelBtn" parent="." instance=ExtResource( 15 )]
-margin_top = -71.0
-margin_bottom = -20.0
+margin_left = -214.048
+margin_top = -99.3303
+margin_right = -41.0479
+margin_bottom = -31.3303
 
 [node name="TimeProgress" parent="." instance=ExtResource( 2 )]
-anchor_top = 0.026982
-anchor_bottom = 0.0536487
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -856.875
+margin_top = 27.546
+margin_right = 856.875
+margin_bottom = 56.3461

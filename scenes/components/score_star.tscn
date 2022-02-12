@@ -32,12 +32,14 @@ tracks/1/keys = {
 }
 
 [node name="Star" type="Control"]
-anchor_right = 0.0371094
-anchor_bottom = 0.0633333
-rect_min_size = Vector2( 38, 38 )
+anchor_right = 0.022
+anchor_bottom = 0.039
+margin_right = -4.24
+margin_bottom = -4.12
+rect_min_size = Vector2( 42, 42 )
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 texture_rect = NodePath("TextureRect")
 anim_player = NodePath("AnimationPlayer")
@@ -46,7 +48,6 @@ star_texture = ExtResource( 1 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -2.67029e-05
 rect_min_size = Vector2( 38, 38 )
 rect_pivot_offset = Vector2( 19, 19 )
 texture = ExtResource( 2 )

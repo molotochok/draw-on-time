@@ -85,6 +85,13 @@ FileManager="*res://scripts/singletons/file_manager.gd"
 Paths="*res://scripts/singletons/paths.gd"
 LevelManager="*res://scripts/singletons/level_manager.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
 [input]
 
 capture_image={

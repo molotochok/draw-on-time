@@ -83,7 +83,6 @@ func _on_pen_cursor_draw():
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_resized():
-	_viewport.size = get_rect().size
 	update_pen_size()
 	
 ##### Helpful functions #####

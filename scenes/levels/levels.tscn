@@ -31,12 +31,14 @@ __meta__ = {
 }
 
 [node name="Album" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.898
-margin_top = 34.0
-margin_right = -2.10199
-margin_bottom = -39.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -943.0
+margin_top = -500.0
+margin_right = 943.0
+margin_bottom = 485.0
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -84,58 +86,58 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 107.0
-margin_bottom = 107.0
+margin_right = 214.0
+margin_bottom = 212.0
 
 [node name="LevelButton2" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
+margin_left = 232.0
 margin_top = 0.0
-margin_right = 232.0
-margin_bottom = 107.0
+margin_right = 446.0
+margin_bottom = 212.0
 
 [node name="LevelButton3" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
+margin_left = 464.0
 margin_top = 0.0
-margin_right = 357.0
-margin_bottom = 107.0
+margin_right = 678.0
+margin_bottom = 212.0
 
 [node name="LevelButton4" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 375.0
+margin_left = 696.0
 margin_top = 0.0
-margin_right = 482.0
-margin_bottom = 107.0
+margin_right = 910.0
+margin_bottom = 212.0
 
 [node name="LevelButton5" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 500.0
+margin_left = 928.0
 margin_top = 0.0
-margin_right = 607.0
-margin_bottom = 107.0
+margin_right = 1142.0
+margin_bottom = 212.0
 
 [node name="LevelButton6" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 625.0
+margin_left = 1160.0
 margin_top = 0.0
-margin_right = 732.0
-margin_bottom = 107.0
+margin_right = 1374.0
+margin_bottom = 212.0
 
 [node name="LevelButton7" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
@@ -143,59 +145,59 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
-margin_top = 126.0
-margin_right = 107.0
-margin_bottom = 233.0
+margin_top = 231.0
+margin_right = 214.0
+margin_bottom = 443.0
 
 [node name="LevelButton8" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_top = 126.0
-margin_right = 232.0
-margin_bottom = 233.0
+margin_left = 232.0
+margin_top = 231.0
+margin_right = 446.0
+margin_bottom = 443.0
 
 [node name="LevelButton9" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 126.0
-margin_right = 357.0
-margin_bottom = 233.0
+margin_left = 464.0
+margin_top = 231.0
+margin_right = 678.0
+margin_bottom = 443.0
 
 [node name="LevelButton10" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 375.0
-margin_top = 126.0
-margin_right = 482.0
-margin_bottom = 233.0
+margin_left = 696.0
+margin_top = 231.0
+margin_right = 910.0
+margin_bottom = 443.0
 
 [node name="LevelButton11" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 500.0
-margin_top = 126.0
-margin_right = 607.0
-margin_bottom = 233.0
+margin_left = 928.0
+margin_top = 231.0
+margin_right = 1142.0
+margin_bottom = 443.0
 
 [node name="LevelButton12" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 625.0
-margin_top = 126.0
-margin_right = 732.0
-margin_bottom = 233.0
+margin_left = 1160.0
+margin_top = 231.0
+margin_right = 1374.0
+margin_bottom = 443.0
 
 [node name="LevelButton13" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
@@ -203,59 +205,59 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
-margin_top = 252.0
-margin_right = 107.0
-margin_bottom = 359.0
+margin_top = 462.0
+margin_right = 214.0
+margin_bottom = 674.0
 
 [node name="LevelButton14" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_top = 252.0
-margin_right = 232.0
-margin_bottom = 359.0
+margin_left = 232.0
+margin_top = 462.0
+margin_right = 446.0
+margin_bottom = 674.0
 
 [node name="LevelButton15" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 252.0
-margin_right = 357.0
-margin_bottom = 359.0
+margin_left = 464.0
+margin_top = 462.0
+margin_right = 678.0
+margin_bottom = 674.0
 
 [node name="LevelButton16" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 375.0
-margin_top = 252.0
-margin_right = 482.0
-margin_bottom = 359.0
+margin_left = 696.0
+margin_top = 462.0
+margin_right = 910.0
+margin_bottom = 674.0
 
 [node name="LevelButton17" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 500.0
-margin_top = 252.0
-margin_right = 607.0
-margin_bottom = 359.0
+margin_left = 928.0
+margin_top = 462.0
+margin_right = 1142.0
+margin_bottom = 674.0
 
 [node name="LevelButton18" parent="Album/GridContainer" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 625.0
-margin_top = 252.0
-margin_right = 732.0
-margin_bottom = 359.0
+margin_left = 1160.0
+margin_top = 462.0
+margin_right = 1374.0
+margin_bottom = 674.0
 
 [node name="NextLevelPageBtn" type="TextureButton" parent="Album"]
 anchor_left = 0.88
@@ -279,10 +281,10 @@ __meta__ = {
 [node name="MenuBtn" type="TextureButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 35.363
-margin_top = -71.0
-margin_right = 162.363
-margin_bottom = -20.0
+margin_left = 43.0
+margin_top = -99.33
+margin_right = 212.0
+margin_bottom = -31.3301
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 12 )
