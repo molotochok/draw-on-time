@@ -34,6 +34,16 @@ func _physics_process(_delta):
 	if(_can_draw):
 		_pen.update()
 
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed() && _settings.can_change_pen_size:
+			if event.button_index == BUTTON_WHEEL_UP:
+				_settings.decrease_pen_size()
+				update_pen_size()
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				_settings.increase_pen_size()
+				update_pen_size()
+
 ##### Custom handlers #####
 func _on_refreshed():
 	_viewport.set_clear_mode(Viewport.CLEAR_MODE_ALWAYS)
@@ -100,7 +110,7 @@ func init_handlers():
 	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
 	assert(GameEvents.connect("finished", self, "_on_finished") == OK)
 	assert(GameEvents.connect("refreshed", self, "_on_refreshed") == OK)
-
+		
 func set_viewport():
 	_viewport = Viewport.new()
 	

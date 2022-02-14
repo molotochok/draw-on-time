@@ -12,10 +12,10 @@ func _init(index = 1, score = 0.0, opened = index == 1):
   self.opened = opened
 
 static func get_stars_by(score: float) -> int:
-	if(score >= 65 && score < 80):
+	if(score >= 70 && score < 86):
 		return 1
 
-	if(score >= 80 && score < 95):
+	if(score >= 86 && score < 95):
 		return 2
 	
 	if(score >= 95):
