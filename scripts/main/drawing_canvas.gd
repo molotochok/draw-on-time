@@ -61,7 +61,7 @@ func _on_finished():
 func _on_settings_initialized(settings: Settings):
 	_settings = settings
 	
-	ref_texture_rect.set_texture(settings.get_ref_texture())
+	init_ref_texture()
 	main_texture_rect.get_material().set_shader_param("reference", settings.get_ref_texture())
 	
 	update_pen_size()	
@@ -135,3 +135,23 @@ func update_pen_size():
 func is_mouse_in_viewport(mouse_pos: Vector2) -> bool:
 	return mouse_pos.x > 0 && mouse_pos.x < _viewport.size.x \
 			&& mouse_pos.y > 0 && mouse_pos.y < _viewport.size.y
+
+func init_ref_texture():
+	ref_texture_rect.set_texture(_settings.get_ref_texture())
+
+	if !_settings.can_toggle_ref:
+		return
+
+	yield(get_tree().create_timer(_settings.ref_toggle_start_time), "timeout")
+	
+	var iteration = 1
+	var factor = -1
+	while(_settings.ref_toggle_iterations == -1 || iteration <= _settings.ref_toggle_iterations):
+		ref_texture_rect.modulate.a += _settings.ref_toggle_step * factor
+
+		if ref_texture_rect.modulate.a >= 1 || ref_texture_rect.modulate.a <= 0:
+			factor *= -1
+
+		$ToggleRefTimer.start(_settings.ref_toggle_step_time); yield($ToggleRefTimer, "timeout")
+
+		iteration += 1

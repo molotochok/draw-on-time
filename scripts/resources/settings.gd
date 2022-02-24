@@ -13,6 +13,13 @@ export(float) var pen_size_step := 0.005
 export(float) var pen_size_min := 0.02
 export(float) var pen_size_max := 0.08
 
+# Reference toggle feature
+export(bool) var can_toggle_ref := false
+export(int) var ref_toggle_iterations := -1 # If -1 then toggling will be going infinite times
+export(float) var ref_toggle_start_time := 1 # In seconds
+export(float) var ref_toggle_step := 0.025
+export(float) var ref_toggle_step_time := 0.05
+
 func increase_pen_size():
 	if !can_change_pen_size:
 		return
