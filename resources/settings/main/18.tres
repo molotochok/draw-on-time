@@ -1,12 +1,10 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://scripts/settings.gd" type="Script" id=1]
+[ext_resource path="res://scripts/resources/settings.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
-time = 10.0
-pen_size = 0.05
+time = 6.0
+pen_size = 0.04
 color = Color( 1, 1, 1, 1 )
 index = 18
-score = 95.9098
-opened = true
