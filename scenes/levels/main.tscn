@@ -37,9 +37,15 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
 time = 10.0
-pen_size = 0.05
 color = Color( 1, 1, 1, 1 )
 index = 1
+pen_size = 0.05
+can_change_pen_size = false
+pen_size_step = 0.005
+pen_size_min = 0.02
+pen_size_max = 0.08
+can_toggle_ref = false
+ref_timer_before_hide = 2.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "finish_message_displayer"
@@ -140,6 +146,8 @@ __meta__ = {
 [node name="PenCursor" type="Control" parent="AlbumBackground/DrawingCanvas"]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="ToggleRefTimer" type="Timer" parent="AlbumBackground/DrawingCanvas"]
 
 [node name="Tutorial" type="Control" parent="AlbumBackground"]
 visible = false

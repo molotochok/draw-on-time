@@ -5,6 +5,15 @@
 [resource]
 script = ExtResource( 1 )
 time = 10.0
-pen_size = 0.05
 color = Color( 1, 1, 1, 1 )
 index = 1
+pen_size = 0.05
+can_change_pen_size = true
+pen_size_step = 0.005
+pen_size_min = 0.02
+pen_size_max = 0.08
+can_toggle_ref = false
+ref_toggle_iterations = -1
+ref_toggle_start_time = 1.0
+ref_toggle_step = 0.025
+ref_toggle_step_time = 0.05

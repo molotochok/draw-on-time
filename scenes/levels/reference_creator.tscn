@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/white_rect.png" type="Texture" id=1]
 [ext_resource path="res://resources/settings/reference_creation/reference_creation.tres" type="Resource" id=2]
@@ -7,10 +7,7 @@
 [ext_resource path="res://materials/drawing_canvas/drawing_canvas.material" type="Material" id=5]
 [ext_resource path="res://scripts/reference_creation/drawing_canvas_creation.gd" type="Script" id=6]
 [ext_resource path="res://scripts/reference_creation/scene_creation_btn.gd" type="Script" id=7]
-[ext_resource path="res://scripts/reference_creation/pen_size_picker.gd" type="Script" id=8]
-[ext_resource path="res://scenes/components/time_progress.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sprites/refresh/refresh_disabled.png" type="Texture" id=10]
-[ext_resource path="res://scripts/reference_creation/time_picker.gd" type="Script" id=11]
 [ext_resource path="res://sprites/refresh/refresh.png" type="Texture" id=12]
 [ext_resource path="res://sprites/refresh/refresh_pressed.png" type="Texture" id=13]
 [ext_resource path="res://sprites/refresh/refresh_hovered.png" type="Texture" id=14]
@@ -81,67 +78,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.12244
 margin_bottom = -1.12244
-
-[node name="PenSizeContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -67.3394
-margin_right = 12.0
-margin_bottom = -27.3394
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PenSize" type="TextEdit" parent="PenSizeContainer"]
-margin_right = 50.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 50, 0 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="PenSizeContainer"]
-margin_left = 54.0
-margin_top = 13.0
-margin_right = 108.0
-margin_bottom = 27.0
-text = "Pen Size"
-
-[node name="TimeContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 30.5
-margin_top = -67.3394
-margin_right = 170.5
-margin_bottom = -27.3394
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Time" type="TextEdit" parent="TimeContainer"]
-margin_right = 50.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 50, 0 )
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TimeContainer"]
-margin_left = 54.0
-margin_top = 13.0
-margin_right = 86.0
-margin_bottom = 27.0
-text = "Time"
-
-[node name="TimeProgress" parent="." instance=ExtResource( 9 )]
-dont_finish = true
 
 [node name="Refresh" type="TextureButton" parent="."]
 anchor_top = 1.0

@@ -1,9 +1,22 @@
 extends DrawingCanvas
 
+var start_drawing_time_ms: int
+var total_drawing_time_ms: int
+
 func init_handlers():
 	.init_handlers()
 	
 	assert(GameEvents.connect("scene_created", self, "_on_scene_created") == OK)
+
+func _physics_process(delta):
+	._physics_process(delta)
+
+	if is_mouse_in_viewport(get_local_mouse_position()):
+		if Input.is_action_just_pressed("click"):
+			start_drawing_time_ms = OS.get_ticks_msec()
+
+		if Input.is_action_just_released("click"):
+			total_drawing_time_ms += OS.get_ticks_msec() - start_drawing_time_ms
 
 func _on_settings_initialized(settings: Settings):
 	_settings = settings
@@ -17,6 +30,11 @@ func _on_scene_created():
 	save_preview(img, index)
 	save_settings(index)
 
+func _on_refreshed():
+	._on_refreshed()
+
+	total_drawing_time_ms = 0
+
 func save_img(img: Image, index: int):
 	assert(img.save_png(Paths.SPRITE_REFERENCES % str(index)) == OK)
 
@@ -28,6 +46,7 @@ func save_preview(img: Image, index: int):
 func save_settings(index: int):
 	var settings = _settings.duplicate()
 	settings.index = index
+	settings.time = total_drawing_time_ms / 1000.0 + 0.5
 
 	if(index <= 1):
 		settings.get_stats().opened = true
