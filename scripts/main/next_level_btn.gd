@@ -3,8 +3,8 @@ extends InteractableTextureButton
 export(NodePath) onready var anim_player = get_node(anim_player) as AnimationPlayer
 
 func _init():
-	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
-	assert(GameEvents.connect("stats_updated", self, "_on_stats_updated") == OK)
+	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
+	GameEvents.connect("stats_updated", self, "_on_stats_updated")
 
 func _pressed():
 	LevelManager.load_next_level()

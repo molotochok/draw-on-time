@@ -1,8 +1,8 @@
 extends UpDownMover
 
 func _ready():
-	assert(connect("mouse_entered", self, "_on_mouse_entered") == OK)
-	assert(connect("mouse_exited", self, "_on_mouse_exited") == OK)
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
 
 	_parent = _parent as LevelButton
 		

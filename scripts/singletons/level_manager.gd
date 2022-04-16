@@ -29,13 +29,13 @@ func load_next_level():
 
 func load_main_level(level = 1):
   current_level = level
-  assert(get_tree().change_scene(Paths.MAIN_LEVEL) == OK)
+  get_tree().change_scene(Paths.MAIN_LEVEL)
 
 func load_menu():
-  assert(get_tree().change_scene(Paths.MENU) == OK)
+  get_tree().change_scene(Paths.MENU)
 
 func load_levels():
-  assert(get_tree().change_scene(Paths.LEVELS) == OK)
+  get_tree().change_scene(Paths.LEVELS)
 
 func quit():
   # Closes the window tab in a Browser if HTML5

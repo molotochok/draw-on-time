@@ -7,10 +7,10 @@ func _ready():
 	if(load_from_resource):
 		settings = load(Paths.MAIN_SETTING % LevelManager.current_level)
 
-	assert(GameEvents.connect("pen_size_changed", self, "_on_pen_size_changed") == OK)
-	assert(GameEvents.connect("time_changed", self, "_on_time_changed") == OK)
-	assert(GameEvents.connect("score_calculated", self, "_on_score_calculated") == OK)
-	assert(GameEvents.connect("settings_save_requested", self, "_on_settings_save_requested") == OK)
+	GameEvents.connect("pen_size_changed", self, "_on_pen_size_changed")
+	GameEvents.connect("time_changed", self, "_on_time_changed")
+	GameEvents.connect("score_calculated", self, "_on_score_calculated")
+	GameEvents.connect("settings_save_requested", self, "_on_settings_save_requested")
 	
 	_initialized()
 	
@@ -38,7 +38,7 @@ func _initialized():
 	GameEvents.emit_signal("settings_initialized", settings)
 
 func save_settings(target_settings = settings):
-	assert(ResourceSaver.save(Paths.MAIN_SETTING % target_settings.index, target_settings) == OK)
+	ResourceSaver.save(Paths.MAIN_SETTING % target_settings.index, target_settings)
 
 	if(target_settings == settings):
 		GameEvents.emit_signal("settings_updated", target_settings)
@@ -47,7 +47,7 @@ func save_settings(target_settings = settings):
 		LevelManager.increment_level_count()
 
 func save_stats(stats: Stats):
-	assert(ResourceSaver.save(Paths.STATS % stats.index, stats) == OK)
+	ResourceSaver.save(Paths.STATS % stats.index, stats)
 
 	if(stats.index == settings.index):
 		GameEvents.emit_signal("stats_updated", stats)

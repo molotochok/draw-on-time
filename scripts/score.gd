@@ -3,8 +3,8 @@ extends Control
 export(Resource) onready var star_texture;
 
 func _ready():
-	assert(GameEvents.connect("settings_initialized", self, "_on_settings_initialized") == OK)
-	assert(GameEvents.connect("score_calculated", self, "_on_score_calculated") == OK)
+	GameEvents.connect("settings_initialized", self, "_on_settings_initialized")
+	GameEvents.connect("score_calculated", self, "_on_score_calculated")
 	
 func _on_settings_initialized(settings: Settings):
 	show_stars(settings.get_stats().get_stars(), false)

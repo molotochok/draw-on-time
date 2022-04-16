@@ -4,7 +4,8 @@ class_name InteractableTextureButton
 
 func toggle_visibility(show: bool, toggle_cursor: bool = false):
 	modulate.a = 1 if show else 0
-	
+	toggle_disable(!show)
+
 	if toggle_cursor:
 		toggle_cursor_shape(show)
 

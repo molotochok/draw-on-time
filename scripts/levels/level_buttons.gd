@@ -11,8 +11,8 @@ onready var _max_page_index := int(LevelManager.level_count / _page_size)
 func _ready():
 	change_page(_page_index)
 
-	assert(GameEvents.connect("prev_level_page_clicked", self, "_on_prev_level_page_clicked") == OK)
-	assert(GameEvents.connect("next_level_page_clicked", self, "_on_next_level_page_clicked") == OK)
+	GameEvents.connect("prev_level_page_clicked", self, "_on_prev_level_page_clicked")
+	GameEvents.connect("next_level_page_clicked", self, "_on_next_level_page_clicked")
 
 func _on_prev_level_page_clicked():
 	change_page(_page_index - 1)

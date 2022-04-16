@@ -6,7 +6,7 @@ var total_drawing_time_ms: int
 func init_handlers():
 	.init_handlers()
 	
-	assert(GameEvents.connect("scene_created", self, "_on_scene_created") == OK)
+	GameEvents.connect("scene_created", self, "_on_scene_created")
 
 func _physics_process(delta):
 	._physics_process(delta)
@@ -36,12 +36,12 @@ func _on_refreshed():
 	total_drawing_time_ms = 0
 
 func save_img(img: Image, index: int):
-	assert(img.save_png(Paths.SPRITE_REFERENCES % str(index)) == OK)
+	img.save_png(Paths.SPRITE_REFERENCES % str(index))
 
 func save_preview(img: Image, index: int):
 	var resize_factor := 6
 	img.resize(img.get_width() / resize_factor, img.get_height() / resize_factor)
-	assert(img.save_png(Paths.SPRITE_PREVIEW_REFERENCES % str(index)) == OK)
+	img.save_png(Paths.SPRITE_PREVIEW_REFERENCES % str(index))
 
 func save_settings(index: int):
 	var settings = _settings.duplicate()

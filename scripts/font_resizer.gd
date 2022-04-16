@@ -16,7 +16,7 @@ onready var font: DynamicFont = get_font(font_name)
 var current_size: int
 
 func _ready():
-	assert(connect("resized", self, "_on_resized") == OK)
+	connect("resized", self, "_on_resized")
 
 	if should_update_size_in_loop:
 		update_size_in_loop()

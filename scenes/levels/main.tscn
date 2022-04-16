@@ -45,7 +45,10 @@ pen_size_step = 0.005
 pen_size_min = 0.02
 pen_size_max = 0.08
 can_toggle_ref = false
-ref_timer_before_hide = 2.0
+ref_toggle_iterations = -1
+ref_toggle_start_time = 1.0
+ref_toggle_step = 0.025
+ref_toggle_step_time = 0.05
 
 [sub_resource type="Animation" id=2]
 resource_name = "finish_message_displayer"
@@ -97,9 +100,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -943.0
+margin_left = -935.0
 margin_top = -500.0
-margin_right = 943.0
+margin_right = 951.0
 margin_bottom = 485.0
 texture = ExtResource( 14 )
 expand = true

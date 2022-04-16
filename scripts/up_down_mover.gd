@@ -24,7 +24,7 @@ onready var _prev_size: Vector2 = get_rect().size
 func _ready():
 	update_initial_parent_pos()
 
-	assert(connect("resized", self, "_on_resized") == OK)
+	connect("resized", self, "_on_resized")
 
 func _physics_process(delta):
 	if (move_dir == MoveDirection.UP):

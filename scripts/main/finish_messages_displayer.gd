@@ -7,8 +7,8 @@ export(Resource) onready var finish_messages = finish_messages as FinishMessages
 export(Array, Color) onready var label_colors = label_colors as Array
 
 func _ready():
-  assert(GameEvents.connect("score_calculated", self, "_on_score_calculated") == OK)
-  assert(GameEvents.connect("refreshed", self, "_on_refreshed") == OK)
+  GameEvents.connect("score_calculated", self, "_on_score_calculated")
+  GameEvents.connect("refreshed", self, "_on_refreshed")
 
   hide()
 

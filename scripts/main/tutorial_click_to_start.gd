@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-  assert(GameEvents.connect("drawing_started", self, "_on_drawing_started") == OK)
-  assert(GameEvents.connect("refreshed", self, "_on_refreshed") == OK)
+  GameEvents.connect("drawing_started", self, "_on_drawing_started")
+  GameEvents.connect("refreshed", self, "_on_refreshed")
 
   show()
 

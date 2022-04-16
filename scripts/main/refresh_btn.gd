@@ -2,7 +2,7 @@ extends InteractableTextureButton
 
 func _ready():
 	toggle_disable(true)
-	assert(GameEvents.connect("drawing_started", self, "_on_drawing_started") == OK)
+	GameEvents.connect("drawing_started", self, "_on_drawing_started")
 
 func _pressed():
 	toggle_disable(true)
